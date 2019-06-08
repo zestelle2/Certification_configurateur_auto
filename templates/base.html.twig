@@ -1,8 +1,15 @@
+<?php header('Content-Type: text/html; charset=utf-8'); ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8" />
+         {# <meta charset="ISO-8859-1"> #}
         <title>{% block title %}Alpin: bienvenue !{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no" >
+
+        <!-- librairie AOS -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <!-- notre lien css -->
         <link rel="stylesheet" href="{{ asset('build/css/app.css') }}"> 
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,7 +19,7 @@
     <body class="bodyPosition">
 
     <!-- la nav bar -->
-        <nav class=" postionAbsolute navbar-Start navbar navbar-expand-lg  sticky-nav-Start" style="position:fixed !important;">
+        <nav class=" postionAbsolute navbar-Start navbar navbar-expand-lg  sticky-nav-Start" style="position:fixed !important; margin-left: -1.7em;">
             <a class="navbar-brand" href="#">
                 <img src="./picture/sources-homepage/logo/logo-white.png" alt="logo" id="logoAlpine"/>
             </a>
@@ -46,7 +53,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#A8">Galerie</a>
                     </li>
-                    <li class="nav-item bold">
+                    <li class="nav-item bolder">
                         <a class="nav-link" href="./configurator.html">Configurer votre Auto</a>
                     </li>
                 </ul>
@@ -56,6 +63,62 @@
 
         {% block body %}{% endblock %}
 
+          <!-- Footer -->
+<footer class="page-footer font-small">
+
+    <!-- Footer Elements -->
+    <div class="container ">
+
+      <!-- Grid row-->
+      <div class="row ">
+
+        <!-- Grid column -->
+        <div class="col-md-12 pb-3 flexcenter mt-5">
+          <div>
+
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fa fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic">
+              <i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fa fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!--Linkedin -->
+            <a class="li-ic">
+              <i class="fa fa-linkedin fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!--Pinterest-->
+            <a class="pin-ic">
+              <i class="fa fa-pinterest fa-lg white-text fa-2x"> </i>
+            </a>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center pb-3">© 2018 Copyright: made with ♥ by Estelle Grange 
+      <a href="{{ path('home_page')}}"> Alpine</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+
+
         <!-- jQuery -->
         <script src="/filejs/jquery.js"> </script>
         <!-- pooper -->
@@ -64,6 +127,12 @@
         <script src="/filejs/fontawesome.js"></script>
         <!--Boostrap -->
         <script src="/filejs/bootstrap.js"></script>
+        
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
 
         {% block javascripts %}
         
