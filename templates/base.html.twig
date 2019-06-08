@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Alpin: bienvenue !{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('build/css/app.css') }}"> 
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body class="bodyPosition">
+
+    <!-- la nav bar -->
+        <nav class=" postionAbsolute navbar-Start navbar navbar-expand-lg  sticky-nav-Start" style="position:fixed !important;">
+            <a class="navbar-brand" href="#">
+                <img src="./picture/sources-homepage/logo/logo-white.png" alt="logo" id="logoAlpine"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa fa-bars fa-2x "></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#A1">Design<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#A2">Conception</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#A3">Motorisation</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#A4">Technologie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#A5">Interieur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#A6">Caracteristiques<br>Techniques</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#A7">Versions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#A8">Galerie</a>
+                    </li>
+                    <li class="nav-item bold">
+                        <a class="nav-link" href="./configurator.html">Configurer votre Auto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        {% block body %}{% endblock %}
+
+        <!-- jQuery -->
+        <script src="/filejs/jquery.js"> </script>
+        <!-- pooper -->
+        <script src="/filejs/popper.js"></script>
+        <!-- Font Awesome -->
+        <script src="/filejs/fontawesome.js"></script>
+        <!--Boostrap -->
+        <script src="/filejs/bootstrap.js"></script>
+
+        {% block javascripts %}
+        
+        
+
+        {% endblock %}
+    </body>
+</html>
