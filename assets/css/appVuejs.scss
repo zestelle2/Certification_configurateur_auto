@@ -1,0 +1,79 @@
+﻿.valid{
+    border: 5px  rgb(170, 241, 217) solid;
+}
+
+.noValid{
+    border: 5px #3385c6 solid;
+}
+
+.imgvalid {
+    color: #72bb53;
+    position: absolute;
+    z-index: 90;
+    float: right;
+    top: 10%;
+    right: 8%;
+
+}
+
+.validPicture {
+    border: 3px solid #72bb53;
+}
+
+.validEquipement:hover {
+    border: 3px solid #72bb53;
+}
+
+.noValidPicture{
+    border: 0px solid #72bb53;
+}
+
+.colorvalid{
+    color: #72bb53;
+    margin-left: -10px;
+}
+
+.imgOrange{
+    color: orange;
+    position: absolute;
+    z-index: 90;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 30%;
+    font-size: 33px !important;
+}
+
+
+.imgGreen{
+    color: #72bb53;
+    position: absolute;
+    z-index: 90;
+    float: right;
+    top: 10%;
+    right: 8%;
+}
+
+.colorvalidRed
+{
+    color: rgb(243, 132, 147);
+}
+
+
+
+.custom-iconProgress{
+
+    background-color: green !important;
+    color: white !important;
+    transition: background 51 ease-in;
+
+    a{
+        color: white !important;
+        transition: color 1s;
+    }
+
+}
+
+
+

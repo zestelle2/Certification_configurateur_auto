@@ -4,9 +4,16 @@
     box-sizing: border-box;
 }
 
+html{
+    margin:0 auto !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+}
+
 body{
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    margin:0 auto !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
 }
 
 .bolder{
@@ -25,15 +32,9 @@ button{
     
 }
 
-.flexcenter{
-    display: flex;
-    justify-content: center;
-}
 
-section{
-    margin-left: 20px;
-    margin-right: 20px;
-}
+
+
 
 h4{
     font-family: roboto;
@@ -43,7 +44,7 @@ h4{
 p{
     font-family: roboto;
     text-align: justify;
-    font-size: 1.3em;
+    font-size: 1.1em;
     text-justify: inter-word;
 }
 
@@ -190,18 +191,6 @@ section {
     color: white;  
 }
 
-
-.marginText{
-
-    margin-right: 30px !important;
-    margin-left: 30px;
-
-}
-
-.marginRight {
-    margin-right: 63px !important;
-}
-
 .textAbsolue {
     color: white;
     font-family: roboto;
@@ -268,9 +257,9 @@ background-color: #3385c6;
 color:white;
 }
 
-.marginItem {
+/* .marginItem {
     margin: 10px;
-}
+} */
 
 .bas_corps{
     margin-top: 10%;
@@ -280,10 +269,6 @@ color:white;
 .containerTechnoligie{display: flex;
 align-items: center;
 flex-direction: column;
-}
-
-.brake{
-    margin:15px;
 }
 
 
@@ -363,11 +348,7 @@ display:none;
 }
 
 
-/* footer */
-footer{
-    background-color: #3385c6 !important;
-    margin-top: 10px;
-}
+
 
 
 

@@ -19,9 +19,9 @@
     <body class="bodyPosition">
 
     <!-- la nav bar -->
-        <nav class=" postionAbsolute navbar-Start navbar navbar-expand-lg  sticky-nav-Start" style="position:fixed !important; margin-left: -1.7em;">
+        <nav class=" postionAbsolute navbar-Start navbar navbar-expand-lg  sticky-nav-Start" style="position:fixed !important">
             <a class="navbar-brand" href="#">
-                <img src="./picture/sources-homepage/logo/logo-white.png" alt="logo" id="logoAlpine"/>
+                <img src="/picture/sources-homepage/logo/logo-white.png" alt="logo" id="logoAlpine"/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -30,44 +30,47 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#A1">Design<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ path('home_page') }}.#A1">Design<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#A2">Conception</a>
+                        <a class="nav-link" href="{{ path('home_page') }}.#A2">Conception</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#A3">Motorisation</a>
+                        <a class="nav-link" href="{{ path('home_page') }}.#A3">Motorisation</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#A4">Technologie</a>
+                        <a class="nav-link" href="{{ path('home_page') }}.#A4">Technologie</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#A5">Interieur</a>
+                        <a class="nav-link" href="{{ path('home_page') }}.#A5">Intérieur</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#A6">Caracteristiques<br>Techniques</a>
+                        <a class="nav-link" href="{{ path('home_page') }}.#A6">Caractéristiques<br>Techniques</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#A7">Versions</a>
+                        <a class="nav-link" href="{{ path('home_page') }}.#A7">Versions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#A8">Galerie</a>
+                        <a class="nav-link" href="{{ path('home_page') }}.#A8">Galerie</a>
                     </li>
-                    <li class="nav-item bolder">
-                        <a class="nav-link" href="./configurator.html">Configurer votre Auto</a>
+                    <li class="nav-item bold">
+                        <a class="nav-link" href="{{ path('configurator') }}" style="font-weight: bolder;">Configurer votre Auto</a>
                     </li>
                 </ul>
             </div>
         </nav>
+       
 
 
         {% block body %}{% endblock %}
+
+      
 
           <!-- Footer -->
 <footer class="page-footer font-small">
 
     <!-- Footer Elements -->
-    <div class="container ">
+    <div class="container flexcenter ">
 
       <!-- Grid row-->
       <div class="row ">
@@ -134,10 +137,6 @@
           AOS.init();
         </script>
 
-        {% block javascripts %}
-        
-        
-
-        {% endblock %}
+        {% block javascripts %}        {% endblock %}
     </body>
 </html>

@@ -1,6 +1,6 @@
 @import url('./fontawesome.css');
 @import url('./bootstrap.css');
-@import url('./homePage.css');
+
 
 /* Animations */
 
@@ -31,3 +31,16 @@
       opacity: 1;
     }
   }
+
+  /* footer */
+footer{
+  background-color: #3385c6 !important;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.flexcenter{
+  display: flex !important;
+  justify-content: center !important;
+}
