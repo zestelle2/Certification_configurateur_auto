@@ -76,7 +76,7 @@
             />
             <!-- validation symbol-->
             <i class=" imgvalid fa fa-check-circle fa-3x"  v-if="pure" aria-hidden="true"></i>
-            <p>54 700€</p>
+            <p>${priceTotalDisplay}</p>
           </div>
           <div
             class="col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 contenairCenter"
@@ -579,7 +579,7 @@
         >
           <!-- les 2 images du DESIGN -->
           <div class="row" v-if="design || !choiceCategory ">
-            <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xd-12">
+            <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xd-12  text-center">
               <img
                 class="d-block PictureDesign"
                 src="/picture/configurateur/equipements/categories/design/repose-pied-alu.jpg"
@@ -588,13 +588,12 @@
                 @click="choiceReposePied"/>
               
                 <!-- validation symbol-->
-                
-              <i class=" colorvalid fa fa-check-circle fa-3x" v-show="reposePied" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="reposePied" @click="deleteElementConduite" aria-hidden="true"></i> 
+              <i class=" colorvalid fa fa-check-circle fa-3x text-center" v-show="reposePied" aria-hidden="true"></i>
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x text-center " v-show="reposePied" @click="deleteElementDesign('reposePied')" aria-hidden="true"></i> 
               
               <p class=" text-center text-uppercase">REPOSE PIEDS<br/>96€</p>
             </div>
-            <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xd-12">
+            <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xd-12 text-center">
               <img
                 class="d-block PictureDesign "
                 src="/picture/configurateur/equipements/categories/design/pack-heritage.jpg"
@@ -603,10 +602,11 @@
                 @click="choicePackHeritage"/>
               
                 <!-- validation symbol-->
-                
-              <i class=" colorvalid fa fa-check-circle fa-3x" v-show="packHeritage" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="packHeritage" @click="deleteElementConduite" aria-hidden="true"></i> 
-              <p class=" text-center text-uppercase">PACK HERITAGE<br/>180€</p>
+              <i class=" colorvalid fa fa-check-circle fa-3x text-center" v-show="packHeritage" aria-hidden="true"></i>
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x text-center " v-show="packHeritage" @click="deleteElementDesign('packHeritage')" aria-hidden="true"></i> 
+                 <p class=" text-center text-uppercase">PACK HERITAGE<br/>180€</p>
+              
+            
             </div>
           </div>
             <!-- les 4 images Conduite -->
@@ -622,7 +622,7 @@
                 <!-- validation symbol-->
                 
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="stationnementArriere" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="stationnementArriere" @click="deleteElementConduite" aria-hidden="true"></i> 
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="stationnementArriere" @click="deleteElementConduite('stationnementArriere')" aria-hidden="true"></i> 
               <p class=" text-center text-uppercase">AIDE STATIONNEMENT arrière<br/>420€</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
@@ -635,8 +635,8 @@
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="stationnementArriereAvant" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="stationnementArriereAvant" @click="deleteElementConduite" aria-hidden="true"></i>
-              <p class=" text-center text-uppercase">AIDE STATIONNEMENT AVANT/ARRIERE<br/>750€</p>
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="stationnementArriereAvant" @click="deleteElementConduite('stationnementAvant')" aria-hidden="true"></i>
+              <p class=" text-center text-uppercase">AIDE STATIONNEMENT AVANT<br/>750€</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
                 <img
@@ -648,7 +648,7 @@
               
               <!-- validation symbol-->
             <i class=" colorvalid fa fa-check-circle fa-3x" v-show="cameraRecul" aria-hidden="true"></i>
-            <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="cameraRecul" @click="deleteElementConduite" aria-hidden="true"></i>  
+            <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="cameraRecul" @click="deleteElementConduite('cameraRecul')" aria-hidden="true"></i>  
             <p class=" text-center text-uppercase">Camera recul<br/>1200€</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 marginSeat text-center">
@@ -661,7 +661,7 @@
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="echappementSport" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="echappementSport" @click="deleteElementConduite" aria-hidden="true"></i>
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="echappementSport" @click="deleteElementConduite('echappementSport')" aria-hidden="true"></i>
               <p class=" text-center text-uppercase">ECHAPPEMENT SPORT<br/>1500€</p>
             </div>
           </div>
@@ -677,7 +677,7 @@
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="packRangement" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="packRangement" aria-hidden="true"></i>
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="packRangement" @click="deleteElementConfort('packRangement')"  aria-hidden="true"></i>
 
               <p class=" text-center text-uppercase">Pack rangement<br/>504€</p>
             </div>
@@ -691,7 +691,7 @@
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="regulateurVitesse" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="regulateurVitesse" aria-hidden="true"></i> 
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="regulateurVitesse" @click="deleteElementConfort('regulateurVitesse')" aria-hidden="true"></i> 
               <p class=" text-center text-uppercase">regulation limit vitesse<br/>0€</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
@@ -704,7 +704,7 @@
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="retroExterieur" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="retroExterieur" aria-hidden="true"></i> 
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="retroExterieur" @click="deleteElementConfort('retroExterieur')" aria-hidden="true"></i> 
               <p class=" text-center text-uppercase">retro exterieur<br/>504€</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 marginSeat text-center">
@@ -717,7 +717,7 @@
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="retroInterieur" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="retroInterieur" aria-hidden="true"></i>
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="retroInterieur" @click="deleteElementConfort('retroInterieur')" aria-hidden="true"></i>
               <p class=" text-center text-uppercase">retro interieur electrochrome<br/>0€</p>
             </div>
           </div>
@@ -746,7 +746,7 @@
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="audioPremium" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="audioPremium" aria-hidden="true"></i>
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementMedia('audioPremium')" v-show="audioPremium" aria-hidden="true"></i>
               <p class=" text-center text-uppercase">Audio premium<br/>1200€</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
@@ -759,7 +759,7 @@
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="audioStandard" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="audioStandard" aria-hidden="true"></i> 
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementMedia('audioStandard')"  v-show="audioStandard" aria-hidden="true"></i> 
               <p class=" text-center text-uppercase">Audio standard<br/>0€</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 marginSeat text-center">
@@ -772,7 +772,7 @@
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="alpineMetrics" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="alpineMetrics" aria-hidden="true"></i> 
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementMedia('alpineMetrics')" v-show="alpineMetrics" aria-hidden="true"></i> 
               <p class=" text-center text-uppercase">alpine metrics<br/>204€</p>
             </div>
           </div>
@@ -788,7 +788,7 @@
               
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="aideFreinage" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="aideFreinage" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementSecurity('aideFreinage')" v-show="aideFreinage" aria-hidden="true"></i>
                 <p class=" text-center text-uppercase">aide freinage<br/>0€</p>
               </div>
               <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xd-12">
@@ -801,7 +801,7 @@
               
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="airbag" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="airbag" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementSecurity('airbag')" v-show="airbag" aria-hidden="true"></i>
                 <p class=" text-center text-uppercase">airbag<br/>0€</p>
               </div>
               <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xd-12">
@@ -814,7 +814,7 @@
               
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="freinageHautePerfomance" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="freinageHautePerfomance" aria-hidden="true"></i> 
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="freinageHautePerfomance" @click="deleteElementSecurity('freinageHautePerfomance')" aria-hidden="true"></i> 
                 <p class=" text-center text-uppercase">freinage haute perfomance<br/>1000€</p>
               </div>
             </div>
@@ -830,7 +830,7 @@
               
               <!-- validation symbol-->
             <i class=" colorvalid fa fa-check-circle fa-3x" v-show="etrierBleu" aria-hidden="true"></i>
-            <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="etrierBleu" aria-hidden="true"></i>
+            <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoExterieur('etrierBleu')" v-show="etrierBleu" aria-hidden="true"></i>
             <p class=" text-center text-uppercase">etrier bleu<br/>384€</p>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6">
@@ -843,7 +843,7 @@
               
               <!-- validation symbol-->
             <i class=" colorvalid fa fa-check-circle fa-3x" v-show="etrierGris" aria-hidden="true"></i>
-            <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="etrierGris" aria-hidden="true"></i> 
+            <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoExterieur('etrierGris')" v-show="etrierGris" aria-hidden="true"></i> 
             <p class=" text-center text-uppercase">etrier gris<br/>0€</p>
           </div>
             <div class=" mx-auto">
@@ -856,7 +856,7 @@
               
               <!-- validation symbol-->
             <i class=" colorvalid fa fa-check-circle fa-3x" v-show="logoAlpine" aria-hidden="true"></i>
-            <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="logoAlpine" aria-hidden="true"></i>
+            <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoExterieur('logoAlpine')" v-show="logoAlpine" aria-hidden="true"></i>
             <p class="text-uppercase text-center">Logo Alpine<br/>120€</p>
             </div>  
         </div>
@@ -872,7 +872,7 @@
               
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="logoVolant" aria-hidden="true"></i>
-          <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="logoVolant" aria-hidden="true"></i> 
+          <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoInterieur('logoVolant')" v-show="logoVolant" aria-hidden="true"></i> 
           <p class=" text-center text-uppercase">logo volant<br/>84€</p>
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
@@ -885,7 +885,7 @@
               
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="packCarbone" aria-hidden="true"></i>
-          <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="packCarbone" aria-hidden="true"></i>
+          <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoInterieur('packCarbone')" v-show="packCarbone" aria-hidden="true"></i>
           <p class=" text-center text-uppercase">pack carbone<br/>0€</p>
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
@@ -898,7 +898,7 @@
               
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="pedalAlu" aria-hidden="true"></i>
-          <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="pedalAlu" aria-hidden="true"></i>
+          <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoInterieur('pedalAlu')" v-show="pedalAlu" aria-hidden="true"></i>
           <p class=" text-center text-uppercase">pedal alu<br/>120€</p>
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 marginSeat text-center">
@@ -911,7 +911,7 @@
               
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="siegeChauffant" aria-hidden="true"></i>
-          <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="siegeChauffant" aria-hidden="true"></i>
+          <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoInterieur('siegeChauffant')" v-show="siegeChauffant" aria-hidden="true"></i>
           <p class=" text-center text-uppercase">siège chauffant<br/>400€</p>
         </div>
       </div>
@@ -1023,7 +1023,7 @@
         <button
           class="buttonShop2 rounded col-6 col-sm-6 col-md-6 col-lg-4 col-xd-4"
         >
-          54 700 € <i class="fa fa-shopping-cart"></i>
+          ${priceTotalDisplay} <i class="fa fa-shopping-cart"></i>
         </button>
       </div>
     </div>
@@ -1258,7 +1258,7 @@
         <button
           class="buttonShop2 rounded col-6 col-sm-6 col-md-6 col-lg-4 col-xd-4"
         >
-          54 700 € <i class="fa fa-shopping-cart"></i>
+         ${priceTotalDisplay} <i class="fa fa-shopping-cart"></i>
         </button>
       </div>
     </div>
