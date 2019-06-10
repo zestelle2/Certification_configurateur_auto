@@ -928,24 +928,24 @@
               <img
                 v-if ="!choiceCategory"
                 class="d-block smallPictureCategory imageRelatif"
-                src="/picture/configurateur/equipements/selection/conduite.jpg"
+                :src= "arrayFistPictureEquipement"
                 alt="third slide"
                 style="max-width: 100%;"
-                @click="choiceDriving"/>
+                @click="choiceCategoryPictureInstant"/>
 
               <!-- sinon on fait -->
               <img
               v-if ="choiceCategory"
               class="d-block smallPictureCategory "
-              :src="arrayEquipmentDisplay"
+              :src="arrayFistPictureEquipement"
               alt="third slide"
               style="max-width: 100%;"
-              @click="choiceConfort"/>
+              @click="choiceCategoryPictureInstant"/>
 
-              <p v-if ="!choiceCategory" style="text-align: center;" class="bold text-uppercase">Conduite</p>
-              
+              {# <p v-if ="!choiceCategory" style="text-align: center;" class="bold text-uppercase">Conduite</p>
+               #}
                 <!-- validation symbol-->
-            <i class=" imgOrange fa fa-check-circle "></i>
+              <i class=" imgOrange fa fa-check-circle "></i>
               <p style="text-align: center;" class="bold text-uppercase">${tableCategoryDisplay}</p>
             </div>
             <div

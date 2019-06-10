@@ -9,7 +9,7 @@
         priceTotalDisplay: 0,
         message:"",
 
-        pictureBefore : "conduite",
+        pictureBefore : "design",
 
         /*progress bar */
         valideProgress1: false ,
@@ -94,7 +94,9 @@
                     ],
         /* choix equipements */
         choiceCategory: false,
-        titleCategory: "",
+        titleCategoryFirst:"design",
+
+        titleCategory: "design",
         i: 0,
         priceEquipements: 0,
         driving: false,
@@ -115,7 +117,10 @@
         /* EQUIPEMENT 2 image */
 
         arrayEquipmentDisplay : "",
-        tableCategoryDisplay : "",
+        tableCategoryDisplay : "conduite",
+        arrayFistPictureEquipement :"/picture/configurateur/equipements/selection/conduite.jpg",
+
+
         arrayEquipment : [
             "/picture/configurateur/equipements/selection/conduite.jpg",
             "/picture/configurateur/equipements/selection/confort.jpg",
@@ -451,6 +456,55 @@
         },
 
         /* CHOIX EQUIPEMENT */
+        /* image qui change en fonction de la category */
+        choiceCategoryPictureInstant () {
+            // nous avons choisi une catégorie 
+            this.choiceCategory = true;
+
+            //  on ajoute l'image correspondante à la fin du tableau en fonction de la catégory
+            switch (this.titleCategoryFirst) {
+                case 'conduite':
+                    this.tableCategoryDisplay = "conduite";
+
+                    this.driving = false;        
+                    this.design = true;
+                    this.confort = false;
+                    this.media = false;
+                    this.inside = false;
+                    this.outside = false;
+                    this.security = false;
+
+                    this.choiceCategory = true;
+                    this.titleCategory = "design";
+                    this.titleCategoryFirst ="design"
+                    this.arrayFistPictureEquipement = "/picture/configurateur/equipements/selection/conduite.jpg"
+
+                    break;
+                case 'design':
+                        this.tableCategoryDisplay = "design";
+                        this.choiceCategory = true;
+                        this.titleCategory = "conduite";
+                        this.titleCategoryFirst ="conduite";
+
+                      
+                        this.confort = false;
+                        this.media = false;
+                        this.inside = false;
+                        this.outside = false;
+                        this.security = false;
+                        this.design = false;
+                        this.driving = true;
+                        
+                        this.arrayFistPictureEquipement = "/picture/configurateur/equipements/selection/design.jpg"
+
+                    break;
+                
+                default:
+                    console.log( "je ne suis dans aucune category , refait ton code !");
+            }
+            
+          
+        },
         choiceDriving: function () {
             this.driving = true;
             this.confort = false;
@@ -464,7 +518,7 @@
             this.titleCategory = "conduite";
 
             this.deleteArrayEquipmentPush();
-            this.choiceCategoryPictureInstant ();
+            // this.choiceCategoryPictureInstant("conduite");
 
 
         },
@@ -481,7 +535,7 @@
             this.titleCategory = "confort";
 
             this.deleteArrayEquipmentPush();
-            this.choiceCategoryPictureInstant ();
+            // this.choiceCategoryPictureInstant ("confort");
 
 
         },
@@ -497,7 +551,7 @@
             this.choiceCategory = true;
             this.titleCategory = "design";
             this.deleteArrayEquipmentPush();
-            this.choiceCategoryPictureInstant ();
+            // this.choiceCategoryPictureInstant ("design");
         },
         choiceMedia: function () {
             this.driving = false;
@@ -511,7 +565,7 @@
             this.choiceCategory = true;
             this.titleCategory = "media et navigation";
             this.deleteArrayEquipmentPush();
-            this.choiceCategoryPictureInstant ();
+            // this.choiceCategoryPictureInstant ("media et navigation");
 
 
         },
@@ -529,7 +583,7 @@
             console.log(this.titleCategory + " dans choiceInside");
 
             this.deleteArrayEquipmentPush();
-            this.choiceCategoryPictureInstant ();
+            // this.choiceCategoryPictureInstant ("perso interieur");
 
         },
         choiceOutside: function () {
@@ -543,7 +597,7 @@
 
             this.choiceCategory = true;
             this.titleCategory = "perso exterieur";
-            this.choiceCategoryPictureInstant ();
+            this.choiceCategoryPictureInstant ("perso exterieur");
             this.deleteArrayEquipmentPush();
 
         },
@@ -559,7 +613,7 @@
             this.choiceCategory = true;
             this.titleCategory = "securite";
             this.deleteArrayEquipmentPush();
-            this.choiceCategoryPictureInstant ();
+            // this.choiceCategoryPictureInstant ();
 
         },
         /* choix EQUIPEMENT 2 CONDUITE */
@@ -773,69 +827,6 @@
                 console.log("l'élement est vivant");
             }
 
-        },
-        /* image qui change en fonction de la category */
-        choiceCategoryPictureInstant () {
-            // nous avons choisi une catégorie 
-            this.choiceCategory = true;
-
-            // on ajoute l'image correspondante à la fin du tableau en fonction de la catégory
-            switch (this.titleCategory) {
-                case 'securite':
-                    let arrayEquipmentDay = this.arrayEquipment.push(this.arrayEquipment[5]);
-                    let tableCategoryDis = this.tableCategory.push(this.tableCategory[0]);
-
-                    break;
-                case 'perso exterieur':
-                    let arrayEquipmentplay = this.arrayEquipment.push(this.arrayEquipment[4]);
-                    let tableCategoryDiay = this.tableCategory.push(this.tableCategory[1]);
-                    
-                    break;
-                case 'persointerieur':
-                    console.log("je suis dans intérieur");
-                    let arrayEquipmentDisp = this.arrayEquipment.push(this.arrayEquipment[6]);
-                    let tableCategoryDisy = this.tableCategory.push(this.tableCategory[2]);
-                    break;
-                case 'media et navigation':
-                    let arrayEquipmentDplay = this.arrayEquipment.push(this.arrayEquipment[3]);
-                    let tableCategoryDplay = this.tableCategory.push(this.tableCategory[3]);
-                    break;
-                case 'design':
-                    let arrayEquipmentDsplay = this.arrayEquipment.push(this.arrayEquipment[2]);
-                    let tableCategoryDispay = this.tableCategory.push(this.tableCategory[4]);
-                    break;
-                case 'confort':
-                    console.log(" je  suis dans confort ");
-                    let arrayEquipmentDisploay = this.arrayEquipment.push(this.arrayEquipment[1]);
-                    let tableCategoryDistay = this.tableCategory.push(this.tableCategory[5]);
-                    break;
-                case 'conduite':
-                    console.log( "je suis dans conduite");
-                    let arrayEquipmentDisplay = this.arrayEquipment.push(this.arrayEquipment[0]);
-                    let tableCategoryDisplaylab = this.tableCategory.push(this.tableCategory[6]);       
-                    break;
-                default:
-                    console.log( "je ne suis dans aucune category , refait ton code !");
-            }
-            
-            // on stock la valeur numero 7 dans un tableau 
-            this.i = 7;
-            this.arrayEquipmentDisplay = this.arrayEquipment[2];
-            this.tableCategoryDisplay = this.tableCategory[4];
-            
-            if(this.arrayEquipment.length  === 9 ) {
-                console.log("miam");
-                this.i = 8;
-                this.arrayEquipmentDisplay = this.arrayEquipment[this.i-1];
-                this.tableCategoryDisplay = this.tableCategory[this.i-1];
-            }
-            if(this.arrayEquipment.length === 10) {
-                this.i = 9;
-                this.deleteArrayEquipmentPush();
-                console.log("je suis sortie");
-                this.arrayEquipmentDisplay = this.arrayEquipment[this.i-2];
-                this.tableCategoryDisplay = this.tableCategory[this.i-2];
-            }
         },
         deleteElementConduite: function (el) {
     
