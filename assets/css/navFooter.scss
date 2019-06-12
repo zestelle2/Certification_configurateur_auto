@@ -27,10 +27,172 @@ html,  body {
 
 }
 
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: transparent;
+    background-clip: padding-box;
+
+    border: transparent !important;
+}
+
+.dropdown{
+
+    .dropdownMenuButton{
+        
+  
+
+        border: transparent !important;
+
+        &:focus{
+
+            border: transparent !important;    
+            
+        }
+
+        &:target {
+            border: transparent !important;
+        }
+
+        &:active {
+            border: transparent !important;
+        }
+
+        
+    }
+
+    &:target {
+        border: transparent !important;
+    }
+
+    &:active {
+        border: transparent !important;
+    }
+
+    
+
+    .dropdown-menu{
+        background-color: #3385c6;
+        border: transparent !important;
+        margin-left: 40px;
+
+    }
+
+    &:focus{
+
+        border: transparent !important;
+        outline: none !important;
+
+        
+    }
+
+    outline: none !important;
+
+    .dropdownMenuButton{
+
+        &:focus{
+
+            border: transparent !important;
+            outline: none !important;
+
+        }
+
+        outline: none !important;
+
+
+    }
+
+}
+
+.btn-secondary1{
+
+    border: transparent !important; 
+
+    &:focus{
+
+        border: transparent !important;    
+        
+    }
+
+    &:target {
+        border: transparent !important;
+    }
+
+    &:active {
+        border: transparent !important;
+    }
+
+    &:hover{
+        color: #fff;;
+    }
+
+}
+
+.dropdown-item{
+            
+    &:hover{
+        background-color: rgb(95, 159, 212)!important;
+        padding-left: 3px;
+    }
+    
+}
+
+.buttonDropdown{
+
+    color: #fff;
+
+    border: transparent;
+    
+    &:target {
+        border: transparent !important;
+    }
+
+    &:active {
+        border: transparent !important;
+    }
+
+    &:focus{
+
+        border: transparent !important;
+        outline: none !important;
+
+    }
+}
+
 nav{
     z-index: 99999 !important;
     color:white !important; 
     padding-bottom: 53px;
+
+    .positionAbsolutionMargin{
+
+        margin-left: -50px;
+    
+    }
+    
+    
+
+}
+
+#logoAlpine{
+    width: 155px;
+}
+
+
+#dropdownMenuButton{
+    background-color: transparent;
+    border: transparent;
 
 }
 
@@ -174,16 +336,110 @@ footer{
 @media screen and (min-width: 1250px) and (max-width:1280px) {
 
     #logoAlpine{
-        max-width: 573% !important;
+        max-width: 155px !important;
         margin-top: 50px !important;
+    }    
+}
+
+@media screen and(max-width:1280px) {
+
+    .navbar-brand{
+        display: inline-block ;
+        padding-top: .3125rem ;
+        padding-bottom: .3125rem;
+        margin-right: -10rem !important;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+     
+}
+
+@media screen and (min-width: 992px) and (max-width: 1120px) {
+
+    .MarginDropDown{
+        margin-left: -38px;
+        margin-right: 24px !important;
+        margin-top: 3px;
     }
 
 }
 
-@media screen and (min-width: 1185px) and (max-width: 1250px) {
+@media screen and (min-width: 992px) and (max-width:1090px){
+    .marginVersion{
+        margin-left: -15px !important;
+        margin-right: 19px !important;
+    }
+
+    .positionAbsolutionMargin{
+
+        margin-left: -38px !important;
+    
+    }
+    
+    .MarginDropDown{
+        margin-left: -38px !important;
+        margin-right: 44px !important;
+        margin-top: 3px !important;
+    }
+    
+    .nav-item{
+        margin-right: 0.7rem;
+        margin-left: -7px !important;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width:1010px){
+
+    .configurateurMargin{
+        margin-left: -20px;
+    }
+ 
+}
+
+@media screen and (max-width:991px){
+
+    .positionAbsolutionMargin {
+        margin-left: -12px !important;
+    }
+ 
+}
+
+@media screen and (min-width: 992px) and (max-width: 1166px) {
+
+   
+
+    .marginVersion{
+        margin-left: -15px;
+        margin-right: 19px;
+    }
+
+    .positionAbsolutionMargin{
+
+        margin-left: -38px;
+    
+    }
+    
+    .MarginDropDown{
+        margin-left: -38px;
+        margin-right: 44px;
+        margin-top: 3px;
+    }
+    
+    .nav-item{
+        margin-left: -8px; 
+    }
+
+
+}
+
+
+
+
+@media screen and (min-width: 992px) and (max-width: 1249px) {
 
     #logoAlpine{
-        max-width: 1999% !important;
+        max-width: 155px !important;
         margin-top: 45px !important;
     }
 

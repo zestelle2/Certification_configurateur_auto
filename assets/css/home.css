@@ -101,6 +101,27 @@ nav{
 
 }
 
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: transparent;
+    background-clip: padding-box;
+
+    border: transparent !important;
+}
+
+
 nav a, nav a.disabled:hover, nav a:disabled:hover {
     color: white !important;
 }
@@ -386,33 +407,7 @@ display:none;
         justify-content: center;
     }
    
-    /* NAVIGATION */
-    nav {
-        height: 50px;
-    }
-
-    #logoAlpine {
-        width: 8px;
-    }
-
-    .car {
-        display: none;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .hamburger {
-        height: 30px;
-    }
-   
-
-    .img-fluid-smarphone {
-        max-width: 100%;
-        height: 176px !important;
-    }
+    s
 
     /* SECTION 1 A110 AGILITE ABSOLUE */
     .textAbsolue {
@@ -586,3 +581,79 @@ display:none;
     
     
 }
+
+.positionAbsolutionMargin{
+    margin:0;
+}
+
+.btn-secondary1{
+
+    border: transparent !important; 
+
+    &:focus{
+
+        border: transparent !important;    
+        
+    }
+
+    &:target {
+        border: transparent !important;
+    }
+
+    &:active {
+        border: transparent !important;
+    }
+
+    &:hover{
+        color: #fff;;
+    }
+
+}
+
+.dropdown-item{
+            
+    &:hover{
+        background-color: rgb(95, 159, 212)!important;
+        padding-left: 3px;
+    }
+    
+}
+
+.buttonDropdown{
+
+    color: #fff;
+
+    border: transparent;
+    
+   
+}
+
+.buttonDropdown:target {
+    border: transparent !important;
+}
+
+.buttonDropdown:active {
+    border: transparent !important;
+}
+
+.buttonDropdown:focus{
+
+    border: transparent !important;
+    outline: none !important;
+
+}
+
+.dropdown-menu{
+    background-color: transparent;
+    border: transparent !important;
+    margin-left: 40px;
+
+}
+
+
+            
+.dropdown-item:hover{
+    background-color: rgb(95, 159, 212)!important;
+    padding-left: 3px;
+}
+    

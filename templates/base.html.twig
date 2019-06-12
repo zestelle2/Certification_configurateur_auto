@@ -20,7 +20,7 @@
 
     <!-- la nav bar -->
         <nav class=" postionAbsolute navbar-Start navbar navbar-expand-lg  sticky-nav-Start" style="position:fixed !important">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ path('home_page') }}">
                 <img src="/picture/sources-homepage/logo/logo-white.png" alt="logo" id="logoAlpine"/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
@@ -48,13 +48,38 @@
                         <a class="nav-link" href="{{ path('home_page') }}.#A6">Caractéristiques<br>Techniques</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ path('home_page') }}.#A7">Versions</a>
+                        <a class="nav-link marginVersion" href="{{ path('home_page') }}.#A7">Versions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('home_page') }}.#A8">Galerie</a>
+                      {% if app.user %}
+                        <li class="nav-item dropdown positionAbsolutionMargin MarginDropDown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="accountDropdownLink">
+                                <img src="{{app.user.avatard}}" class="avatar avatar-mini" alt="Avatar de {{app.user.fullName}}"> {{app.user.fullName}}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="accountDopdownLink">
+                                <a href="{{ path('account_index') }}" class="dropdown-item">Mon compte</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="{{ path('') }}" class="dropdown-item">Mes voiture</a>
+                                <a href="{{ path('') }}" class="dropdown-item">Modifier mon profil</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="{{ path('account_logout') }}" class="dropdown-item">Déconnexion</a>
+                            </div>
+                        </li>
+                        {% else %}
+                            <li class="nav-item dropdown positionAbsolutionMargin  MarginDropDown">
+                              <button class="btn btn-secondary1 buttonDropdown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Menu
+                              </button>
+                              <div class="dropdown-menu dropdown-menu1 " style="background-color:transparent;" aria-labelledby="dropdownMenuButton">
+                                <a href="{{ path('account_register') }}" class="nav-link dropdown-item" >Inscription</a>
+                                <a href="{{ path('account_login') }}" class="nav-link dropdown-item">Connexion</a>
+                            </li>
+                        {% endif %}
                     </li>
+                    
                     <li class="nav-item bold">
-                        <a class="nav-link" href="{{ path('configurator') }}" style="font-weight: bolder;">Configurer votre Auto</a>
+                        <a class="nav-link configurateurMargin" href="{{ path('configurator') }}" style="font-weight: bolder;">Configurer votre Auto</a>
                     </li>
                 </ul>
             </div>
