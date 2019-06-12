@@ -120,6 +120,14 @@
         tableCategoryDisplay : "conduite",
         arrayFistPictureEquipement :"/picture/configurateur/equipements/selection/conduite.jpg",
 
+        valideConduite : false,
+        valideConfort : false,
+        valideMedia : false,
+        validePersoExterieur : false,
+        validePersoInterieur : false,
+        valideSecurite: false,
+        valideDesign : false,
+
 
         arrayEquipment : [
             "/picture/configurateur/equipements/selection/conduite.jpg",
@@ -137,7 +145,10 @@
 
         /* EQUIPEMENT 2 Conduite */
         cameraRecul : false,
+        valideCameraRecul :false,
+        
         stationnementArriere : false,
+        valideStationnementArriere : false,
         stationnementArriereAvant: false,
         echappementSport : false,
         /* EQUIPEMENT 2 Confort */
@@ -166,7 +177,42 @@
          /* EQUIPEMENT 2 DESIGN */
          reposePied : false,
          packHeritage: false,
-                
+
+        /* ACCESSOIRE */
+        priceAccessoire : 0,
+
+
+         /* CHOIX ACCESSOIRE : Transport et protection*/
+        alarm : false,
+        chaine :false,
+        extincteur : false,
+        fixation : false,
+        kitSecurite: false,
+        obd : false,
+        validAccessoireTransportProtection : false,
+
+       /* CHOIX ACCESSOIRE : Multimedia*/
+        supportCamera : false,
+        supportSmartphone : false,
+        validAccesoireMultimedia : false,
+       
+     /* CHOIX ACCESSOIRE : Interieur*/
+        filet : false,
+        tapis : false,
+        validAccesoireInterieur : false,
+
+
+        /* CHOIX ACCESSOIRE : Materiel de Garage*/
+        chargeurBatterie : false,
+        kitOutils : false,
+        validAccesoireMaterielGarage: false,
+        
+        /* CHOIX ACCESSOIRE : Exterieur*/
+        antivol : false,
+        cabochons : false,
+        housse : false,
+        validAccesoireExterieur: false,
+
 
     },
     methods: {
@@ -177,7 +223,7 @@
             this.legende = true;
             this.valideProgress1= true;
             this.priceVersion= 58500;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -188,7 +234,7 @@
             this.valideProgress1= true;
             this.pure = true;
             this.priceVersion= 54700;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -203,7 +249,7 @@
             /*la bar de progressionn */
             this.valideProgress2 = true;
 
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -227,7 +273,7 @@
 
             /* le Prix */
             this.priceColor= 1800;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
@@ -249,7 +295,7 @@
           
             /* le Prix */
             this.priceRims = 1000;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             if(this.legende) {
@@ -275,7 +321,7 @@
 
              /* le Prix */
              this.priceRims = 1000;
-             this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+             this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
              let val = (this.priceTotal/1).toFixed().replace('" "', ',')
              this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
@@ -313,7 +359,7 @@
 
              /* le Prix */
              this.priceRims = 0;
-             this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+             this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
              let val = (this.priceTotal/1).toFixed().replace('" "', ',')
              this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
@@ -348,7 +394,7 @@
 
              /* le Prix */
              this.priceRims = 0;
-             this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+             this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
              let val = (this.priceTotal/1).toFixed().replace('" "', ',')
              this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
@@ -379,7 +425,7 @@
           
             /* le Prix */
             this.priceSeat = 0;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             if(this.legende) {
@@ -400,7 +446,7 @@
           
             /* le Prix */
             this.priceSeat = 800;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             if(this.legende) {
@@ -421,7 +467,7 @@
           
             /* le Prix */
             this.priceSeat = 0;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             if(this.legende) {
@@ -442,7 +488,7 @@
           
             /* le Prix */
             this.priceSeat = 800;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             
             let val = (this.priceTotal/1).toFixed().replace('" "', ',');
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -494,7 +540,7 @@
                         this.security = false;
                         this.design = false;
                         this.driving = true;
-                        
+
                         this.arrayFistPictureEquipement = "/picture/configurateur/equipements/selection/design.jpg"
 
                     break;
@@ -580,7 +626,7 @@
 
             this.choiceCategory = true;
             this.titleCategory = "perso interieur";
-            console.log(this.titleCategory + " dans choiceInside");
+
 
             this.deleteArrayEquipmentPush();
             // this.choiceCategoryPictureInstant ("perso interieur");
@@ -597,7 +643,6 @@
 
             this.choiceCategory = true;
             this.titleCategory = "perso exterieur";
-            this.choiceCategoryPictureInstant ("perso exterieur");
             this.deleteArrayEquipmentPush();
 
         },
@@ -618,202 +663,298 @@
         },
         /* choix EQUIPEMENT 2 CONDUITE */
         choiceCameraRecul: function () {
+
+            this.valideConduite = true;
+
             this.cameraRecul = true;
  
             this.priceEquipements = this.priceEquipements + 1200;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         choiceStationnementArriere: function () {
             this.stationnementArriere = true;
+            this.valideConduite = true;
+
 
             this.priceEquipements = this.priceEquipements + 420;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         choiceStationnementArriereAvant: function () {
             this.stationnementArriereAvant = true;
+            this.valideConduite = true;
+
 
             this.priceEquipements = this.priceEquipements + 720;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         choiceEchappementSport : function () {
             this.echappementSport =true;
+            this.valideConduite = true;
+
 
             this.priceEquipements = this.priceEquipements + 1500;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         /* CHOICE EQUIPEMENT 2 Confort */
         choicePackRangement: function () {
             this.packRangement =true;
+            this.valideConfort = true;
+
+
             var pricePackRangement= 504;
             this.priceEquipements = this.priceEquipements + 504;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         choiceRegulateurVitesse: function () {
             this.regulateurVitesse =true;
+            this.valideConfort = true;
+
+
             var priceRegulateur= 0;
             this.priceEquipements = this.priceEquipements + 0;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         choiceRetroExterieur : function () {
             this.retroExterieur =true;
+            this.valideConfort = true;
+    
+
             var priceRetroExterieur= 504;
             this.priceEquipements = this.priceEquipements + 504;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
-            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+            this.validEquipement();
+            ;
 
         },
         choiceRetroInterieur : function () {
             this.retroInterieur =true;
+            this.valideConfort = true;
+
+
+
             var priceRetroInterieur= 0;
             this.priceEquipements = this.priceEquipements + 0;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         /* EQUIPEMENT 2 Media Navigation */
         choiceAudioFocal : function () {
             this.audioFocal = true;
+            this.valideMedia = true;
+
 
             this.priceEquipements = this.priceEquipements + 600;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         choiceAudioPremium : function () {
             this.audioPremium = true;
+            this.valideMedia = true;
 
             this.priceEquipements = this.priceEquipements + 1200;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+        this.validEquipement();
         },
         choiceAudioStandard : function () {
-            this.audioStandard = true ; 
+            this.audioStandard = true ;
+            this.valideMedia = true; 
 
             this.priceEquipements = this.priceEquipements + 0;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         choiceAlpineMetrics : function () {
             this.alpineMetrics = true;
+            this.valideMedia = true;
 
             this.priceEquipements = this.priceEquipements + 204;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         /* EQUIPEMENT 2 Perso exterieur */
         choiceEtrierBleu : function () {
-            this.etrierBleu =true;        
+            this.etrierBleu =true;
+            this.validePersoExterieur = true;        
             
             this.priceEquipements = this.priceEquipements + 384;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         choiceEtrierGris : function () {
             this.etrierGris = true;
+            this.validePersoExterieur = true;        
 
             this.priceEquipements = this.priceEquipements + 0;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         choiceLogoAlpine : function ()  {
             this.logoAlpine =true;
+            this.validePersoExterieur = true;        
+
 
             this.priceEquipements = this.priceEquipements + 120;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         /* EQUIPEMENT 2 Perso Interieur */
         choiceLogoVolant : function () {
             this.logoVolant = true;
+            this.validePersoInterieur = true;        
+
 
             this.priceEquipements = this.priceEquipements + 84;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         choicePackCarbone : function () {
             this.packCarbone = true;
+            this.validePersoInterieur = true;        
+
 
             this.priceEquipements = this.priceEquipements + 0;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         choicePedalAlu : function () {
             this.pedalAlu = true;
+            this.validePersoInterieur = true;  
 
             this.priceEquipements = this.priceEquipements + 120;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         choiceSiegeChauffant : function () {
             this.siegeChauffant =true ;
+            this.validePersoInterieur = true;  
 
             this.priceEquipements = this.priceEquipements + 400;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        
+            this.validEquipement();
         },
         /* EQUIPEMENT 2 SECURITE */
         choiceAideFreinage : function () {
             this.aideFreinage = true;
+            this.valideSecurite = true;  
+            
 
             this.priceEquipements = this.priceEquipements + 0;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.validEquipement();
         },
         choiceAirbag : function () { 
            this.airbag = true; 
+           this.valideSecurite = true;  
+
 
            this.priceEquipements = this.priceEquipements + 0;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.validEquipement();
          },
         choiceFreinageHautePerfomance () {
             this.freinageHautePerfomance = true;
+            this.valideSecurite = true;  
+
 
             this.priceEquipements = this.priceEquipements + 1000;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.validEquipement();
         },
+        /*design */
         choiceReposePied : function () {
             this.reposePied = true;
+            this.valideDesign =true;  
+
 
             this.priceEquipements = this.priceEquipements + 96;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.validEquipement();
         },
         choicePackHeritage : function () {
             this.packHeritage = true;
+            this.valideDesign =true;  
+
 
             this.priceEquipements = this.priceEquipements + 180;
-            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.validEquipement();
         }, 
         deleteArrayEquipmentPush: function () {
 
@@ -888,7 +1029,7 @@
                             this.reposePied = false;
                             this.priceEquipements = this.priceEquipements - 96;
 
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                         }
@@ -900,7 +1041,7 @@
                             this.packHeritage = false;
                             this.priceEquipements = this.priceEquipements - 180;
 
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                         }
@@ -930,7 +1071,7 @@
                             this.retroInterieur = false;
                             this.priceEquipements = this.priceEquipements - 0;
 
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
@@ -943,7 +1084,7 @@
                             this.retroExterieur = false;
                             this.priceEquipements = this.priceEquipements - 504;
 
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
@@ -954,7 +1095,7 @@
                             {
                                 this.regulateurVitesse = false;
                                 this.priceEquipements = this.priceEquipements - 0;
-                                this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                                this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                                 let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                                 this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                         }  
@@ -964,7 +1105,7 @@
                         {
                             this.packRangement =false;
                             this.priceEquipements = this.priceEquipements - 504;
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                         }  
@@ -994,7 +1135,7 @@
                             this.audioFocal = false;
                             this.priceEquipements = this.priceEquipements - 600;
 
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
@@ -1007,7 +1148,7 @@
                             this.audioPremium = false;
                             this.priceEquipements = this.priceEquipements - 1200;
 
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
@@ -1018,7 +1159,7 @@
 
                             this.audioStandard = false;
                             this.priceEquipements = this.priceEquipements - 0;
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                         }  
@@ -1028,7 +1169,7 @@
 
                             this.packRangement =false;
                             this.priceEquipements = this.priceEquipements - 204;
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                         }  
@@ -1057,7 +1198,7 @@
                             this.etrierBleu = false;
                             this.priceEquipements = this.priceEquipements - 384;
 
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
@@ -1070,7 +1211,7 @@
                             this.etrierGris = false;
                             this.priceEquipements = this.priceEquipements - 0;
 
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
@@ -1081,7 +1222,7 @@
 
                             this.logoAlpine = false;
                             this.priceEquipements = this.priceEquipements - 120;
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                         }  
@@ -1110,7 +1251,7 @@
                             this.logoVolant = false;
                             this.priceEquipements = this.priceEquipements - 84;
 
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
@@ -1123,7 +1264,7 @@
                             this.packCarbone = false;
                             this.priceEquipements = this.priceEquipements - 0;
 
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
@@ -1134,7 +1275,7 @@
 
                             this.pedalAlu = false;
                             this.priceEquipements = this.priceEquipements - 120;
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                         }  
@@ -1144,7 +1285,7 @@
 
                             this.siegeChauffant =false;
                             this.priceEquipements = this.priceEquipements - 400;
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                         }  
@@ -1171,7 +1312,7 @@
                             this.aideFreinage = false;
                             this.priceEquipements = this.priceEquipements - 0;
     
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     
@@ -1184,7 +1325,7 @@
                             this.airbag = false;
                             this.priceEquipements = this.priceEquipements - 0;
     
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     
@@ -1196,7 +1337,7 @@
                             this.freinageHautePerfomance = false;
                             this.priceEquipements = this.priceEquipements - 1000;
                             
-                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements; 
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
                             let val = (this.priceTotal/1).toFixed().replace('" "', ',')
                             this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                         }  
@@ -1206,8 +1347,509 @@
                 }
                 
             }
-        }
+        },
+        validEquipement : function(){
+            if(this.valideDesign == true && this.valideConduite == true && this.valideConfort == true && this.valideMedia == true && this.validePersoExterieur == true && this.validePersoInterieur == true && this.valideSecurite == true ){
+
+                this.valideProgress5 = true;
+                console.log("this.valideProgress5 dernier " + this.valideProgress5)
+
+            } 
+
+        },
+        /* methods Accessoire */
+        /* transport et protection */
+        AccessoireChoiceAlarm: function () {
+            this.alarm = true;
+
+            this.priceAccessoire= this.priceAccessoire + 543;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.transportProtectionValidate();
+        
+        },
+        AccessoireChoiceChaine: function () {
+            this.chaine = true;
+
+            this.priceAccessoire= this.priceAccessoire + 336;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.transportProtectionValidate();
+        
+        },
+        AccessoireChoiceExtincteur: function () {
+            this.extincteur = true;
+
+            this.priceAccessoire= this.priceAccessoire + 22;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.transportProtectionValidate();
+        
+        },
+        AccessoireChoiceFixation: function () {
+            this.fixation = true;
+
+            this.priceAccessoire= this.priceAccessoire + 72;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.transportProtectionValidate();
+        
+        },
+        AccessoireChoiceKitSecurite: function () {
+            this.kitSecurite = true;
+
+            this.priceAccessoire= this.priceAccessoire + 20;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.transportProtectionValidate();
+        
+        },
+        AccessoireChoiceObd: function () {
+            this.obd = true;
+
+            this.priceAccessoire= this.priceAccessoire + 99;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.transportProtectionValidate();
+        
+        },
+        transportProtectionValidate: function () {
+            if (this.alarm || this.chaine || this.extincteur || this.fixation || this.kitSecurite|| this.obd)
+            {
+                this.validAccessoireTransportProtection = true;
+            }
+            this.validAccessoire();
+
+        },
+        deleteElementTransportProtection: function (el) {
+
+            var tableauTransportProtection = [ "alarm",
+                "chaine",
+                "extincteur",
+                "fixation",
+                "kitSecurite",
+                "obd"
+            ]; 
+            /* je parcours le tableau */
+            for (i = 0 ;  i < tableauTransportProtection.length ; i++ ) {
+                console.log(tableauTransportProtection[i]);
+                
+                switch (tableauTransportProtection[i]) {
+                    case 'alarm':
+                        if(el == 'alarm'){
     
+                            this.alarm = false;
+                            this.priceAccessoire = this.priceAccessoire - 543;
+    
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    
+                        }
+                        break;
+
+                    case 'chaine':
+                        if(el == 'chaine'){
+    
+                            this.chaine = false;
+                            this.priceAccessoire = this.priceAccessoire - 336;
+    
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    
+                        }
+                        break;
+                    case 'extincteur':
+                        if(el == 'extincteur'){
+    
+                            this.extincteur = false;
+                            this.this.priceAccessoire = this.priceAccessoire - 22;
+                            
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                        }  
+                        break;
+                        case 'fixation':
+                            if(el == 'fixation'){
+        
+                                this.fixation = false;
+                                this.this.priceAccessoire = this.priceAccessoire - 72;
+                                
+                                this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                                let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                                this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                            }  
+                            break;
+                                case 'kitSecurite':
+                                    if(el == 'kitSecurite'){
+                
+                                        this.kitSecurite = false;
+                                        this.this.priceAccessoire = this.priceAccessoire - 20;
+                                        
+                                        this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                                        let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                                        this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                                    }  
+                                break;
+                            case 'obd':
+                        if(el == 'obd'){
+    
+                            this.obd = false;
+                            this.this.priceAccessoire = this.priceAccessoire - 99;
+                            
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                        }  
+                        break;
+                    default:
+                
+                }
+                
+            }
+        },
+        /* Accesoire Multimedia */
+        AccessoireChoiceSupportCamera: function () {
+            this.supportCamera = true;
+
+            this.priceAccessoire= this.priceAccessoire + 89;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.AccesoireMultimediaValide();
+        
+        },
+        AccessoireChoiceSupportSmartphone: function () {
+            this.supportSmartphone = true;
+
+            this.priceAccessoire= this.priceAccessoire + 21;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.AccesoireMultimediaValide();
+        
+        },
+        AccesoireMultimediaValide: function () {
+            if (this.supportSmartphone || this.supportCamera )
+            {
+                this.validAccesoireMultimedia = true;
+            }
+            this.validAccessoire();
+
+        },
+        deleteElementMedia: function (el) {
+
+            var tableauMdeleteElementMedia = [ "supportCamera",
+                "supportSmarphone",
+            ]; 
+            /* je parcours le tableau */
+            for (i = 0 ;  i < tableauMdeleteElementMedia.length ; i++ ) {
+                console.log(tableauMdeleteElementMedia[i]);
+                
+                switch (tableauMdeleteElementMedia[i]) {
+                    case 'supportCamera':
+                        if(el == 'supportCamera'){
+    
+                            this.supportCamera = false;
+                            this.priceAccessoire = this.priceAccessoire - 89;
+    
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    
+                        }
+                        break;
+
+                    case 'supportSmarphone':
+                        if(el == 'supportSmarphone'){
+    
+                            this.supportSmarphone = false;
+                            this.priceAccessoire = this.priceAccessoire - 21;
+    
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    
+                        }
+                        break;
+                    default:
+                
+                }
+                
+            }
+        },
+        /* Accessoire Interieur */
+        AccessoireChoiceFilet: function () {
+            this.filet = true;
+
+            this.priceAccessoire= this.priceAccessoire + 59;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.AccesoireInterieur();
+        
+        },
+        AccessoireChoiceTapis: function () {
+            this.tapis = true;
+
+            this.priceAccessoire= this.priceAccessoire + 83;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.AccesoireInterieur();
+        
+        },
+        AccesoireInterieur: function () {
+            if (this.filet || this.tapis )
+            {
+                this.validAccesoireInterieur = true;
+            }
+            this.validAccessoire();
+
+        },
+        deleteElementInterieur: function (el) {
+
+            var tableauDeleteElementInterieur = [ "tapis",
+                "filet",
+            ]; 
+            /* je parcours le tableau */
+            for (i = 0 ;  i < tableauDeleteElementInterieur.length ; i++ ) {
+                console.log(tableauDeleteElementInterieur[i]);
+                
+                switch (tableauDeleteElementInterieur[i]) {
+                    case 'filet':
+                        if(el == 'filet'){
+    
+                            this.filet = false;
+                            this.priceAccessoire = this.priceAccessoire - 59;
+    
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    
+                        }
+                        break;    
+
+                    case 'tapis':
+                        if(el == 'tapis'){
+    
+                            this.tapis = false;
+                            this.priceAccessoire = this.priceAccessoire - 83;
+    
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    
+                        }
+                        break;
+
+                    default:
+                
+                }
+                
+            }
+        },
+        /* Accessoire Materiel de Garage */
+        AccessoireChoiceKitOutils: function () {
+            this.kitOutils = true;
+
+            this.priceAccessoire= this.priceAccessoire + 393;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.validAccesoireMethodMaterielGarage();
+        
+        },
+        AccessoireChoiceChargeurBatterie: function () {
+            this.chargeurBatterie = true;
+
+            this.priceAccessoire= this.priceAccessoire + 240;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.validAccesoireMethodMaterielGarage();
+        
+        },
+        validAccesoireMethodMaterielGarage: function () {
+            if (this.kitOutils || this.chargeurBatterie )
+            {
+                this.validAccesoireMaterielGarage = true;
+            }
+
+            this.validAccessoire();
+
+        },
+        deleteElementMaterielGarage: function (el) {
+
+            var tableauDeleteElementInterieur = [ "chargeurBatterie",
+                "kitOutils",
+            ]; 
+            /* je parcours le tableau */
+            for (i = 0 ;  i < tableauDeleteElementInterieur.length ; i++ ) {
+                console.log(tableauDeleteElementInterieur[i]);
+                
+                switch (tableauDeleteElementInterieur[i]) {
+                    case 'kitOutils':
+                        if(el == 'kitOutils'){
+    
+                            this.kitOutils = false;
+                            this.priceAccessoire = this.priceAccessoire - 393;
+    
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    
+                        }
+                        break;    
+
+                    case 'chargeurBatterie':
+                        if(el == 'chargeurBatterie'){
+    
+                            this.chargeurBatterie = false;
+                            this.priceAccessoire = this.priceAccessoire - 240;
+    
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    
+                        }
+                        break;
+
+                    default:
+                
+                }
+            }
+        },/* Accessoire Exterieur */
+        AccessoireChoiceAntivol: function () {
+            this.antivol = true;
+
+            this.priceAccessoire= this.priceAccessoire + 57;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.AccesoireExterieur();
+        
+        },
+        AccessoireChoiceCabochons: function () {
+            this.cabochons = true;
+
+            this.priceAccessoire= this.priceAccessoire + 24;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.AccesoireExterieur();
+        
+        },
+        AccessoireChoiceHousse: function () {
+            this.housse = true;
+
+            this.priceAccessoire= this.priceAccessoire + 216;
+            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            this.AccesoireExterieur();
+        
+        },
+        AccesoireExterieur: function () {
+            if (this.antivol || this.cabochons || this.housse )
+            {
+                this.validAccesoireExterieur = true;
+            }
+            this.validAccessoire();
+        },
+        deleteElementExterieur: function (el) {
+
+            var tableauDeleteElementInterieur = [ "cabochons",
+                "antivol", "housse"
+            ]; 
+            /* je parcours le tableau */
+            for (i = 0 ;  i < tableauDeleteElementInterieur.length ; i++ ) {
+                console.log(tableauDeleteElementInterieur[i]);
+                
+                switch (tableauDeleteElementInterieur[i]) {
+                    case 'antivol':
+                        if(el == 'antivol'){
+    
+                            this.antivol = false;
+                            this.priceAccessoire = this.priceAccessoire - 57;
+    
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    
+                        }
+                        break;    
+
+                    case 'cabochons':
+                        if(el == 'cabochons'){
+    
+                            this.cabochons = false;
+                            this.priceAccessoire = this.priceAccessoire - 24;
+    
+                            this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                            let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                            this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    
+                        }
+                        break;
+                        case 'housse':
+                                if(el == 'housse'){
+            
+                                    this.housse = false;
+                                    this.priceAccessoire = this.priceAccessoire - 216;
+            
+                                    this.priceTotal = this.priceColor + this.priceVersion + this.priceRims + this.priceSeat + this.priceEquipements + this.priceAccessoire; 
+                                    let val = (this.priceTotal/1).toFixed().replace('" "', ',')
+                                    this.priceTotalDisplay= val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            
+                                }
+                                break;
+
+                    default:
+                
+                }
+            }
+        },validAccessoire : function(){
+            console.log("garage  : " +  this.validAccesoireMaterielGarage );
+            console.log("interieur  : " + this.validAccesoireInterieur);
+            console.log("multimedia  : " + this.validAccesoireMultimedia);
+            console.log( "transport  : " + this.validAccessoireTransportProtection);
+            console.log( "exterieur   : " + this.validAccesoireExterieur);
+            if( true && this.validAccesoireMaterielGarage == true && this.validAccesoireInterieur == true && this.validAccesoireMultimedia == true && this.validAccessoireTransportProtection == true && this.validAccesoireExterieur== true ){
+
+                this.valideProgress6 = true;
+                
+
+            } 
+        }
+
+        
+        
+            
+
     }
     
 })

@@ -41,9 +41,15 @@
       <li class="custom-icon "
           :class="valideProgress4? 'custom-iconProgress': 'custom-icon' ">
             <a style="padding: 1rem; line-height: 0px" href="#selleries">4</a></li>
-      <li class="custom-icon"><a style="padding: 1rem; line-height: 0px" href="#equipements">5</a></li>
-      <li class="custom-icon "><a style="padding: 1rem; line-height: 0px" href="#accessoires">6</a></li>
-      <li  class="custom-icon "><a style="padding: 1rem; line-height: 0px" href="recapitulatif">7</a></li>
+      <li class="custom-icon"
+          :class="valideProgress5? 'custom-iconProgress': 'custom-icon'">
+            <a style="padding: 1rem; line-height: 0px" href="#equipements">5</a>
+      </li>
+      <li class="custom-icon " 
+          :class="valideProgress6? 'custom-iconProgress': 'custom-icon'">
+        <a style="padding: 1rem; line-height: 0px" href="#accessoires">6</a>
+      </li>
+      <li  class="custom-icon "><a style="padding: 1rem; line-height: 0px" href="#recapitulatif">7</a></li>
       </ul>
   </aside>
   <!-- PREMIERE SECTION CHOIX DE VERSION -->
@@ -76,7 +82,7 @@
             />
             <!-- validation symbol-->
             <i class=" imgvalid fa fa-check-circle fa-3x"  v-if="pure" aria-hidden="true"></i>
-            <p>${priceTotalDisplay}</p>
+            <p> 54 700 € </p>
           </div>
           <div
             class="col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 contenairCenter"
@@ -945,7 +951,7 @@
               {# <p v-if ="!choiceCategory" style="text-align: center;" class="bold text-uppercase">Conduite</p>
                #}
                 <!-- validation symbol-->
-              <i class=" imgOrange fa fa-check-circle "></i>
+              <i class=" imgOrange fa fa-check-circle " @click="choiceCategoryPictureInstant"></i>
               <p style="text-align: center;" class="bold text-uppercase">${tableCategoryDisplay}</p>
             </div>
             <div
@@ -957,6 +963,9 @@
                 alt="third slide"
                 style="max-width: 100%;"
                 @click="choiceConfort"/>
+
+              <!-- validation symbol-->
+              <i class=" imgOrange fa fa-check-circle " @click="choiceConfort"></i>
               
               <p style="text-align: center;" class="bold">CONFORT</p>
             </div>
@@ -969,6 +978,10 @@
                 alt="third slide"
                 style="max-width: 100%;"
                 @click="choiceMedia"/>
+
+                <!-- validation symbol-->
+              <i class=" imgOrange fa fa-check-circle " @click="choiceMedia"></i>
+
               <p style="text-align: center;" class="bold">
                 MEDIA ET NAVIGATION
               </p>
@@ -984,6 +997,10 @@
                 alt="third slide"
                 style="max-width: 100%;"
                 @click="choiceOutside"/>
+
+              <!-- validation symbol-->
+              <i class=" imgOrange fa fa-check-circle " @click="choiceOutside"></i>
+
               <p style="text-align: center;" class="bold">PERSO EXTERIEURE</p>
             </div>
             <div
@@ -995,6 +1012,11 @@
                 alt="third slide"
                 style="max-width: 100%;"
                 @click="choiceInside"/>
+
+                <!-- validation symbol-->
+              <i class=" imgOrange fa fa-check-circle " @click="choiceInside"></i>
+
+
               <p style="text-align: center;" class="bold">PERSO INTERIEURE</p>
             </div>
             <div
@@ -1006,6 +1028,10 @@
                 alt="third slide"
                 style="max-width: 100%;"
                 @click="choiceSecurity"/>
+
+                <!-- validation symbol-->
+              <i class=" imgOrange fa fa-check-circle " @click="choiceSecurity"></i>
+
               <p style="text-align: center;" class="bold">SECURITE</p>
             </div>
           </div>
@@ -1018,7 +1044,7 @@
         <button
           class="BouttonSecondPrix rounded col-12 col-sm-12 col-md-12 col-lg-8 col-xd-8"
         >
-          REPOSE PIEDS + PACK HERITAGE
+          ${priceEquipements} € 
         </button>
         <button
           class="buttonShop2 rounded col-6 col-sm-6 col-md-6 col-lg-4 col-xd-4"
@@ -1063,7 +1089,12 @@
                   class="d-block smallPicture  "
                   src="/picture/configurateur/accessoires/transport et protection/alarme.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click ="AccessoireChoiceAlarm"/>
+                
+                <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="alarm" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="alarm"  @click="deleteElementTransportProtection('alarm')" aria-hidden="true"></i>
                 <p style="text-align: center;">ALARM <br />543€</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1071,7 +1102,12 @@
                   class="d-block smallPicture"
                   src="/picture/configurateur/accessoires/transport et protection/chaaine-neige.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click ="AccessoireChoiceChaine"/>
+
+                <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="chaine" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="chaine"  @click="deleteElementTransportProtection('chaine')" aria-hidden="true"></i>
                 <p style="text-align: center;">CHAINE <br />336€</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1079,7 +1115,12 @@
                   class="d-block smallPicture "
                   src="/picture/configurateur/accessoires/transport et protection/extincteur.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click ="AccessoireChoiceExtincteur"/>
+
+                <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="extincteur" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="extincteur"  @click="deleteElementTransportProtection('extincteur')" aria-hidden="true"></i>
                 <p class="text-align: center;">EXTINCTEUR<br />22€</p>
               </div>
             </div>
@@ -1090,7 +1131,12 @@
                   class="d-block smallPicture  "
                   src="/picture/configurateur/accessoires/transport et protection/fixation-extincteur.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click ="AccessoireChoiceFixation"/>
+
+                <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="fixation" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="fixation"  @click="deleteElementTransportProtection('fixation')" aria-hidden="true"></i>
                 <p style="text-align: center;">fIXATION <br />72€</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1098,7 +1144,12 @@
                   class="d-block smallPicture"
                   src="/picture/configurateur/accessoires/transport et protection/kit-securite.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click ="AccessoireChoiceKitSecurite"/>
+
+                  <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="kitSecurite" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="kitSecurite"  @click="deleteElementTransportProtection('kitSecurite')" aria-hidden="true"></i>
                 <p style="text-align: center;">KIT SECURITE <br />20€</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1106,7 +1157,12 @@
                   class="d-block smallPicture "
                   src="/picture/configurateur/accessoires/transport et protection/protection-obd.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click ="AccessoireChoiceObd"/>
+
+                  <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="obd" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="obd"  @click="deleteElementTransportProtection('obd')" aria-hidden="true"></i>
                 <p class="text-align: center;">OBD<br />99€ </p>
               </div>
             </div>
@@ -1129,7 +1185,12 @@
                   class="d-block smallPicture  "
                   src="/picture/configurateur/accessoires/multimedia/support-camera.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click ="AccessoireChoiceSupportCamera"/>
+
+                <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="supportCamera" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="supportCamera"  @click="deleteElementTransportProtection('supportCamera')" aria-hidden="true"></i>
                 <p style="text-align: center;">SUPPORT CAMERA<br />89€</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1137,7 +1198,12 @@
                   class="d-block smallPicture"
                   src="/picture/configurateur/accessoires/multimedia/support-smartphone.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click ="AccessoireChoiceSupportSmartphone"/>
+
+                <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="supportSmartphone" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="supportSmartphone"  @click="deleteElementTransportProtection('supportSmartphone')" aria-hidden="true"></i>
                 <p style="text-align: center;">SUPPORT SMARTPHONE<br />21€</p>
               </div>
           </div>
@@ -1159,7 +1225,12 @@
                   class="d-block smallPicture  "
                   src="/picture/configurateur/accessoires/interieur/filet-rangement.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click ="AccessoireChoiceFilet"/>
+
+                  <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="filet" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="filet"  @click="deleteElementInterieur('filet')" aria-hidden="true"></i>
                 <p style="text-align: center;">FILET<br />59€</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1167,7 +1238,12 @@
                   class="d-block smallPicture"
                   src="/picture/configurateur/accessoires/interieur/tapis-coffre.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click ="AccessoireChoiceTapis"/>
+
+                <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="tapis" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="tapis"  @click="deleteElementInterieur('tapis')" aria-hidden="true"></i>
                 <p style="text-align: center;">TAPIS<br />83€</p>
               </div>
           </div>
@@ -1190,7 +1266,12 @@
                   class="d-block smallPicture  "
                   src="/picture/configurateur/accessoires/garage/chargeur-batterie.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click ="AccessoireChoiceChargeurBatterie"/>
+
+                  <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="chargeurBatterie" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="chargeurBatterie"  @click="deleteElementMaterielGarage('chargeurBatterie')" aria-hidden="true"></i>
                 <p style="text-align: center;">CHARGEUR BATTERIE<br />240€</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1198,7 +1279,12 @@
                   class="d-block smallPicture"
                   src="/picture/configurateur/accessoires/garage/kit-outils.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click ="AccessoireChoiceKitOutils"/>
+
+                <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="kitOutils" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="kitOutils"  @click="deleteElementMaterielGarage('kitOutils')" aria-hidden="true"></i>
                 <p style="text-align: center;">KIT OUTILS<br />393€</p>
               </div>
           </div>
@@ -1221,7 +1307,12 @@
                   class="d-block smallPicture  "
                   src="/picture/configurateur/accessoires/exterieur/antivol-jantes.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click="AccessoireChoiceAntivol"/>
+
+                <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="antivol" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="antivol"  @click="deleteElementExterieur('antivol')" aria-hidden="true"></i>
                 <p style="text-align: center;">ANTIVOL<br />57€</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1229,7 +1320,11 @@
                   class="d-block smallPicture"
                   src="/picture/configurateur/accessoires/exterieur/cabochons-metal.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click="AccessoireChoiceCabochons"/>
+                <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="cabochons" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="cabochons"  @click="deleteElementExterieur('cabochons')" aria-hidden="true"></i>
                 <p style="text-align: center;">CABOCHONS<br />24€</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1237,7 +1332,11 @@
                   class="d-block smallPicture"
                   src="/picture/configurateur/accessoires/exterieur/housse.jpg"
                   alt="third slide"
-                  style="max-width: 100%;"/>
+                  style="max-width: 100%;"
+                  @click="AccessoireChoiceHousse"/>
+                <!-- validation symbol-->
+                <i class=" colorvalid fa fa-check-circle fa-3x" v-show="housse" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="housse"  @click="deleteElementExterieur('housse')" aria-hidden="true"></i>  
                 <p style="text-align: center;">HOUSSE<br />216€</p>
               </div>
           </div>
@@ -1253,7 +1352,7 @@
         <button
           class="BouttonSecondPrix rounded col-12 col-sm-12 col-md-12 col-lg-8 col-xd-8"
         >
-          REPOSE PIEDS + PACK HERITAGE
+          ${priceAccessoire} € 
         </button>
         <button
           class="buttonShop2 rounded col-6 col-sm-6 col-md-6 col-lg-4 col-xd-4"
@@ -1268,16 +1367,103 @@
   <hr>
   <!-- SECTION RECAPITULATIF-->
   <section id="recapitulatif">
-    <!-- Titre -->
-    <div class="container marginTitle">
+    <!-- le Titre -->
+    <div class="container">
       <div class="row">
-        <div
-          class="col-12 col-sm-12 col-md-12 col-lg-12 col-xd-12 contenairCenter"
-        >
-          <button class="BouttonSecondTitle rounded ">
-            RECAPITULATIF DE VOTRE ACHAT
-          </button>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xd-12 contenairCenter">
+          <button class="BouttonSecondTitle rounded ">Votre voiture :</button>
         </div>
+      </div>
+    </div>
+    <!-- Le carousel couleur Bleu -->
+    <div id="carouselColorBlue" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li
+          data-target="#carouselColorBlue"
+          data-slide-to="0"
+          class="active"></li>
+        <li data-target="#carouselColorBlue" data-slide-to="1"></li>
+        <li data-target="#carouselColorBlue" data-slide-to="2"></li>
+        <li data-target="#carouselColorBlue" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner">
+        <!-- PREMIER SLIDE COULEUR -->
+        <div class="carousel-item active">
+          <div class="contenairCenter">
+            <img
+              class="d-block relative carouselCouleur img-fluid-Design"
+              :src="pictureCarouselColor[0]"
+              alt="first slide"
+              style="max-width: 100%;"/>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <!-- DEUXIEME SLIDE COULEUR -->
+          <div class="contenairCenter">
+            <img
+              class="d-block carouselCouleur img-fluid-Design"
+              :src="pictureCarouselColor[1]"
+              alt="second slide"
+              style="max-width: 100%;"/>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="contenairCenter">
+            <!-- TROISIEME SLIDE COULEUR -->
+            <img
+              class="d-block carouselCouleur img-fluid-Design"
+              :src="pictureCarouselColor[2]"
+              alt="third slide"
+              style="max-width: 100%;"
+              />
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <div class="contenairCenter">
+            <!-- QUATRIEME SLIDE COUELUR -->
+            <img
+              class="d-block carouselCouleur img-fluid-Design"
+              :src="pictureCarouselColor[3]"
+              alt="four slide"
+              style="max-width: 100%;"/>
+          </div>
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselColorBlue"
+        role="button"
+        data-slide="prev">
+        <span
+          class="carousel-control-prev-icon background-color: black"
+          aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselColorBlue"
+        role="button"
+        data-slide="next">
+        <span
+          class="carousel-control-next-icon background-color: black"
+          aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  
+    <!-- Bouton avec le prix -->
+    <div class=" contenair contenairShop2">
+      <div class="row flex-wrapLG">
+        <button
+          class="BouttonSecondPrix rounded col-12 col-sm-12 col-md-12 col-lg-8 col-xd-8">
+          <!-- TO DO : message à afficher par défaut à l'aide du blade de Laravel-->
+          ${priceTotalDisplay}€
+        </button>
+        <button
+          class="buttonShopAchat rounded col-6 col-sm-6 col-md-6 col-lg-4 col-xd-4">
+          Acheter <i class="fa fa-shopping-cart"></i>
+        </button>
       </div>
     </div>
   </section>    

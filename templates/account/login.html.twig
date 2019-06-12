@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Connexion Alpin {% endblock %}
+
+{% block stylesheets %}
+
+<!-- nos liens css -->
+<link rel="stylesheet" href="{{ asset('build/css/login.css') }}"> 
+
+<!-- Boostrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+
+
+{% endblock %}
+
+{% block body %}
+
+<div class=" register">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class=" fade show text-align form-new" id="profile" >
+                            <h3  class="register-heading">Connectez vous à votre compte Alpine</h3>
+                            <div class="row register-form mt-3">
+                                <div class="col-md-12 ">
+                                {% if hasError %}
+                                    <div class="alert alert-danger">Une erreur est survenue, le nom d'utilisateur ou alors le mot de passe est invalide</div>
+                                {% endif %}
+                                    <form action=" {{ path('account_login') }}" method="post" class=" centerElement">
+                                        <div class="form-group mb-3">
+                                            <label for="email">Email </label>
+                                            <input type="text"  name="_username" id"email" class="form-control LGform2" placeholder="Entrer votre émail" value="" required="" />
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="password">Mot de passe </label>
+                                            <input type="password" name="_password" id="password" class="form-control LGform2" placeholder="Entrer un mot de passe .." value="" required=""/>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <input type="submit" name="LGform2" class="btnContactSubmit " value="Se connecter" style="width: 280px;" />
+                                        </div>
+                                        <a href="ForgetPassword.php" class="btnForgetPwd" value="Login">Vous avez oublié votre mot de passe?</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}

@@ -1,0 +1,202 @@
+﻿/*navigation */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,  body {
+    width: 100%;
+    height: 100%;
+    
+
+}
+.bodyPosition {
+    position: relative;
+    padding-top: 8%
+}
+
+.content{
+    padding: 20px;
+}
+
+/* NAVIGATION */
+.sectionAgilite {
+    margin: 0;
+    padding: 0 !important;
+
+}
+
+nav{
+    z-index: 99999 !important;
+    color:white !important; 
+    padding-bottom: 53px;
+
+}
+
+nav a, nav a.disabled:hover, nav a:disabled:hover {
+    color: white !important;
+}
+
+
+.navbar-Start{
+    background-color: #3385c6;
+    top:10%;
+    display: flex;
+
+    position: absolute !important;
+    z-index: 99999 !important;
+    width: 100%;
+    margin: 0;
+    top: 0%;
+}
+
+.postionAbsolute{
+    position:absolute !important;
+    z-index:99999;
+}
+
+.position-sticky {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+}
+
+.navbar-Final{
+    background-color: #84c1ff !important;
+    top:10%;
+    display: flex;
+
+    position: absolute !important;
+    z-index: 99999;
+    width: 100%;
+    margin: 0;
+    top: 0%;
+}
+
+:first-child {
+    display: inline-block;
+}
+
+
+/* footer */
+footer{
+    background-color: #3385c6 !important;
+    margin-top: 10px;
+
+}
+
+
+
+/*derniere section */
+
+
+
+@media only screen and (max-width: 610px) {
+
+
+    /*NAVEBAR */
+    #logoAlpine {
+        width: 140px;
+    }
+
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 410px) {
+
+    .buttonHamburger{
+        height: 32px;
+        color: #232323;
+        background-color: #add6ff;
+        font-size: 12px !important;
+        margin: 5px;
+    }
+
+
+    .register-heading{
+        width: 174%;
+        margin-top: 28% !important;
+        font-size: 0.8em !important;
+    }
+
+   
+    /* NAVIGATION */
+    nav {
+        height: 60px;
+    }
+
+    #logoAlpine {
+        width: 130px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+   
+
+    .img-fluid-smarphone {
+        max-width: 100%;
+        height: 176px !important;
+    }
+    nav ul a {
+    color: inherit;
+    text-decoration: none;
+}
+
+   
+
+    
+
+
+}
+
+
+@media only screen and (max-width: 900px) {
+
+
+    .bodyPosition {
+        position: relative;
+        padding-top: 15%
+    }
+
+}
+
+@media screen and (min-width: 1282px) {
+
+    #logoAlpine{
+        width: 95%
+    }
+
+}
+
+@media screen and (min-width: 1250px) and (max-width:1280px) {
+
+    #logoAlpine{
+        max-width: 573% !important;
+        margin-top: 50px !important;
+    }
+
+}
+
+@media screen and (min-width: 1185px) and (max-width: 1250px) {
+
+    #logoAlpine{
+        max-width: 1999% !important;
+        margin-top: 45px !important;
+    }
+
+
+}
+
+
+
+/* footer */
+footer
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}

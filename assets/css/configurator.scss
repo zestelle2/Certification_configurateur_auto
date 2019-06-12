@@ -127,6 +127,14 @@ button{
     margin-left: 0%;
 }
 
+.buttonShopAchat{
+    color: #3385c6;
+    background-color: white ;
+    font-weight: bold;
+    border: 2px solid #008000;
+    margin-left: 0%;
+}
+
 .flex-wrapLG{
     flex-wrap: nowrap !important;
 }
@@ -689,6 +697,10 @@ footer{
 }
 
 .buttonShop2 {
+    margin-left : 65%;
+}
+
+.buttonShopAchat{
     margin-left : 65%;
 }
 

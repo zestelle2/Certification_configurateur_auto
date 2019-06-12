@@ -27,8 +27,15 @@ Encore
     .addStyleEntry('css/app', './assets/css/app.scss')
     .addStyleEntry('css/home', './assets/css/home.css')
 
+    .addStyleEntry('css/navFooter', './assets/css/navFooter.scss')
+
     .addStyleEntry('css/configurator', './assets/css/configurator.scss')
     .addStyleEntry('css/appVuejs', './assets/css/appVuejs.scss')
+
+    .addStyleEntry('css/login', './assets/css/login.scss')
+    .addStyleEntry('css/register', './assets/css/register.scss')
+
+
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
