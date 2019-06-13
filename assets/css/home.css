@@ -586,38 +586,6 @@ display:none;
     margin:0;
 }
 
-.btn-secondary1{
-
-    border: transparent !important; 
-
-    &:focus{
-
-        border: transparent !important;    
-        
-    }
-
-    &:target {
-        border: transparent !important;
-    }
-
-    &:active {
-        border: transparent !important;
-    }
-
-    &:hover{
-        color: #fff;;
-    }
-
-}
-
-.dropdown-item{
-            
-    &:hover{
-        background-color: rgb(95, 159, 212)!important;
-        padding-left: 3px;
-    }
-    
-}
 
 .buttonDropdown{
 

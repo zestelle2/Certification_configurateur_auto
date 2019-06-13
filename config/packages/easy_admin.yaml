@@ -1,0 +1,38 @@
+easy_admin:
+    design:
+      brand_color: '#00004c'
+    entities:
+        # List the entity class name you want to manage
+        User:
+          class: App\Entity\User
+          label: 'User'
+          list:
+            fields: 
+              - 'id' 
+              - { property: 'firstName' , label: 'Prénom' }
+              - { property: 'lastName' , label: 'Nom' }
+              - { property: 'email', type: 'email', label: 'émail' }
+              - { property: 'adress' , label: 'addresse' }
+              - { property: 'country' , label: 'country' }
+              - { property: 'avatard', type: 'image' }
+            title: 'Liste %%entity_label%% '
+
+        Auto:
+          class: App\Entity\Auto
+          label: 'Auto'
+          list:
+            fields: 
+              - 'id' 
+              - { property: 'versionName' , label: 'Nom de version' }
+              - { property: 'versionPrice' , label: 'Prix de la version' }
+              - { property: 'colorName', label: 'Couleur de la voiture' }
+              - { property: 'colorPrice' , label: 'Prix de la couleur' }
+              - { property: 'rimsName' , label: 'Jantes choisie : ' }
+              - { property: 'rimsPrice' , label: 'prix des jante' }
+          title: 'Liste %%entity_label%% '
+
+        Equipment:
+          class: App\Entity\Equipment
+        Accessory:
+          class: App\Entity\Accessory
+    site_name: 'Alpin' 
