@@ -1,11 +1,13 @@
 security:
     encoders:
         App\Entity\User:
+            #hashage utiliser pour crypter le mot de passe #
             algorithm: bcrypt
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory: { memory: ~ }
+        #on cree un nouveau privider qui provient de la base de donnée #
         in_database:
             entity:
                 class: App\Entity\User
