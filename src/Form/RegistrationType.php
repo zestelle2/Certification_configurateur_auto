@@ -17,11 +17,11 @@ class RegistrationType extends ApplicationType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            /* getConfiguration est une méthode qui permet d'écrire le label et l'attribue placeholder */
             ->add('firstName', TextType::class, $this->getConfiguration("Prénom", "Votre prénom ..."))
             ->add('lastName', TextType::class, $this->getConfiguration("Nom", "Votre nom de famille ..."))
             ->add('adress', TextType::class, $this->getConfiguration("Adresse", "Votre adresse postal"))
             ->add('email', EmailType::class, $this->getConfiguration("Email", " votre adresse email"))
-            ->add('avatard', UrlType::class, $this->getConfiguration("Photo de profil", "URL de votre avatar ..."))
             ->add('password', PasswordType::class, $this->getConfiguration("Mot de passe", "Choisissez un bon mot de passe !"))
             ->add('passwordConfirm', PasswordType::class, $this->getConfiguration("Confirmation de mot de passe", "Veuillez confirmer votre mot de passe"))
             ->add('country', TextType::class, $this->getConfiguration("Pays", ""))

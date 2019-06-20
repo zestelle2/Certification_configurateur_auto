@@ -2,7 +2,7 @@ security:
     encoders:
         App\Entity\User:
             #hashage utiliser pour crypter le mot de passe #
-            algorithm: bcrypt
+            algorithm: auto
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
@@ -24,6 +24,10 @@ security:
             form_login: 
                 login_path: account_login
                 check_path: account_login
+            logout:
+                path:       account_logout
+                # where to redirect after logout
+                target:     account_login
                 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

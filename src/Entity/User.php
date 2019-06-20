@@ -22,7 +22,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Vous devez renseigner votre prénom")
+     * @Assert\NotBlank(message="Vous devez renseigner votre prï¿½nom")
      */
     private $firstName;
 
@@ -38,11 +38,7 @@ class User implements UserInterface
      */
     private $email;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\Url(message="Veuillez donner une URL valide pour votre avatar !")
-     */
-    private $avatard;
+   
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -60,7 +56,7 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @Assert\EqualTo(propertyPath="password", message="Vous n'avez pas correctement confirmé votre mot de passe !")
+     * @Assert\EqualTo(propertyPath="password", message="Vous n'avez pas correctement confirmï¿½ votre mot de passe !")
      */
     private $passwordConfirm;
     
@@ -115,19 +111,6 @@ class User implements UserInterface
         return $this;
     }
 
-
-
-    public function getAvatard(): ?string
-    {
-        return $this->avatard;
-    }
-
-    public function setAvatard(?string $avatard): self
-    {
-        $this->avatard = $avatard;
-
-        return $this;
-    }
 
     public function getAdress(): ?string
     {

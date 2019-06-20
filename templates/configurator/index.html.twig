@@ -6,7 +6,9 @@
 
 <!-- nos liens css -->
 <link rel="stylesheet" href="{{ asset('build/css/appVuejs.css') }}"> 
-<link rel="stylesheet" href="{{ asset('build/css/configurator.css') }}"> 
+        <!-- notre lien css -->
+        <link rel="stylesheet" href="{{ asset('build/css/navFooter.css') }}"> 
+        <link rel="stylesheet" href="{{ asset('build/css/configurator.css') }}"> 
 
 <!-- Boostrap -->
     <link
@@ -24,7 +26,7 @@
 <!-- LA div app qui englope toutes les section -->
 <div id="appVue">
   <aside class="filAriaStart offset-11">
-    <ul style="position:absolute; margin-top: 20px">
+    <ul class="custom-iconUl" style="position:absolute; margin-top: 20%">
       <li 
         class="custom-icon"
         :class="valideProgress1? 'custom-iconProgress': 'custom-icon' ">
@@ -82,10 +84,10 @@
             />
             <!-- validation symbol-->
             <i class=" imgvalid fa fa-check-circle fa-3x"  v-if="pure" aria-hidden="true"></i>
-            <p> 54 700 € </p>
+            <p> 54 700 â‚¬ </p>
           </div>
           <div
-            class="col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 contenairCenter"
+            class="col câ‚¬ol-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 contenairCenter"
           >
             <img
               src="/picture/configurateur/modele/selection/legende.png"
@@ -96,7 +98,7 @@
               <!-- validation symbol-->
               <i class=" imgvalid fa fa-check-circle fa-3x" v-show="legende" aria-hidden="true"></i>
 
-            <p>58 500€ <span class="imgvalid"></span> </p>
+            <p>58 500 â‚¬ <span class="imgvalid"></span> </p>
           </div>
           <!-- les deux bouttons -->
           <div
@@ -122,12 +124,12 @@
         <button
           class="BouttonSecondPrixCacher rounded col-6 col-sm-6 col-md-6 col-lg-8 col-xd-8"
         >
-          Cette élément est en display none
+          {# Cette Ã©lÃ¨ment est en display none #}
         </button>
         <button
           class="buttonShop2 rounded col-6 col-sm-6 col-md-6 col-lg-4 col-xd-4"
         >
-          ${priceTotalDisplay} € <i class="fa fa-shopping-cart"></i>
+          ${priceTotalDisplay} â‚¬ <i class="fa fa-shopping-cart"></i>
         </button>
       </div>
     </div>
@@ -232,7 +234,7 @@
             @click="choiceColorBlue"/>
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="blue" aria-hidden="true"></i>
-          <p style="text-align: center;">Bleu Alpine <br />1 800€</p>
+          <p style="text-align: center;">Bleu Alpine <br />1 800 â‚¬</p>
         </div>
         <div class=" SmallContenairColor">
           <img
@@ -243,7 +245,7 @@
             @click="choiceColorWhite"/>
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="white" aria-hidden="true"></i>
-          <p style="text-align: center;">Blanc Glacé <br />0€</p>
+          <p style="text-align: center;">Blanc GlacÃ© <br />0 â‚¬</p>
         </div>
         <div class=" SmallContenairColor">
           <img
@@ -254,7 +256,7 @@
             @click="choiceColorBlack"/>
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="black" aria-hidden="true"></i>
-          <p style="text-align: center;">Noir Profond <br />840€</p>
+          <p style="text-align: center;">Noir Profond <br />840â‚¬</p>
         </div>
       </div>
     </div>
@@ -263,13 +265,13 @@
     <div class=" contenair contenairShop2">
       <div class="row flex-wrapLG">
         <button
-          class="BouttonSecondPrix rounded col-12 col-sm-12 col-md-12 col-lg-8 col-xd-8">
-          <!-- TO DO : message à afficher par défaut à l'aide du blade de Laravel-->
-          Choix de la couleur ${priceColor}€
+          class="BouttonSecondPrix rounded col-6 col-sm-6 col-md-6 col-lg-8 col-xd-8">
+          <!-- TO DO : message ï¿½ afficher par dï¿½faut ï¿½ l'aide du blade de Laravel-->
+          Choix de la couleur ${priceColor} â‚¬
         </button>
         <button
           class="buttonShop2 rounded col-6 col-sm-6 col-md-6 col-lg-4 col-xd-4">
-          ${priceTotalDisplay} € <i class="fa fa-shopping-cart"></i>
+          ${priceTotalDisplay} â‚¬ <i class="fa fa-shopping-cart"></i>
         </button>
       </div>
     </div>
@@ -312,7 +314,7 @@
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="standartRims" aria-hidden="true"></i>
         
-          <p style="text-align: center;">Standard <br />0€</p>
+          <p style="text-align: center;">Standard <br />0â‚¬</p>
         </div>
         <div class=" SmallContenairColor">
           <img
@@ -324,7 +326,7 @@
             />
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="seracRims" aria-hidden="true"></i>
-          <p style="text-align: center;">Serac <br />1 000€</p>
+          <p style="text-align: center;">Serac <br />1 000â‚¬</p>
 
         </div>
         <div class=" SmallContenairColor">
@@ -337,7 +339,7 @@
 
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="legendeRims" aria-hidden="true"></i>
-          <p class="text-align: center;">Légende<br />0€ Modèle Légende</p>
+          <p class="text-align: center;">LÃ©gende<br />0â‚¬ ModÃ¨le LÃ©gende</p>
         </div>
       </div>
     </div>
@@ -347,11 +349,11 @@
       <div class="row flex-wrapLG">
         <button
           class="BouttonSecondPrix rounded col-6 col-sm-6 col-md-6 col-lg-8 col-xd-8">
-          ${message} ${priceRims}€
+          ${message} ${priceRims}â‚¬
         </button>
         <button
           class="buttonShop2 rounded col-6 col-sm-6 col-md-6 col-lg-4 col-xd-4">
-          ${priceTotalDisplay} € <i class="fa fa-shopping-cart"></i>
+          ${priceTotalDisplay} â‚¬ <i class="fa fa-shopping-cart"></i>
         </button>
       </div>
     </div>
@@ -369,7 +371,7 @@
       </div>
     </div>
     <div class="marginTop">
-      <!-- Le choix des sièges -->
+      <!-- Le choix des siÃ¨ges -->
       <div class="contenair contenairCenter">
         <div class="row">
           <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 marginSeat text-center">
@@ -383,7 +385,7 @@
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="cndSeat" aria-hidden="true"></i>
 
-            <p style="text-align: center;">Cuir Noir et Diamica <br />0€</p>
+            <p style="text-align: center;">Cuir Noir et Diamica <br />0â‚¬</p>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 marginSeat text-center">
             <img
@@ -395,7 +397,7 @@
 
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="cnpSeat" aria-hidden="true"></i>
-            <p style="text-align: center;">Cuir Noir Perforé<br />800€</p>
+            <p style="text-align: center;">Cuir Noir PerforÃ©<br />800â‚¬</p>
           </div>
         </div>
         <div class="row">
@@ -410,7 +412,7 @@
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="cnSeat" aria-hidden="true"></i>
             <p style="text-align: center;">
-              Cuir Noir <br />0€ Modèle Légende
+              Cuir Noir <br />0â‚¬ ModÃ¨le LÃ©gende
             </p>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 text-center">
@@ -424,7 +426,7 @@
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="cbSeat" aria-hidden="true"></i>
             <p style="text-align: center;">
-              Cuir Brun <br />800€ Modèle Légende
+              Cuir Brun <br />800â‚¬ ModÃ¨le LÃ©gende
             </p>
           </div>
         </div>
@@ -434,12 +436,12 @@
     <div class=" contenair contenairShop2">
       <div class="row flex-wrapLG">
         <button
-          class="BouttonSecondPrix rounded col-12 col-sm-12 col-md-12 col-lg-8 col-xd-8">
-            ${priceSeat}€
+          class="BouttonSecondPrix  rounded col-6 col-sm-6 col-md-6 col-lg-8 col-xd-8">
+            ${priceSeat}â‚¬
         </button>
         <button
           class="buttonShop2 rounded col-6 col-sm-6 col-md-6 col-lg-4 col-xd-4">
-          ${priceTotalDisplay} € <i class="fa fa-shopping-cart"></i>
+          ${priceTotalDisplay} â‚¬ <i class="fa fa-shopping-cart"></i>
         </button>
       </div>
     </div>
@@ -461,7 +463,7 @@
         </div>
       </div>
     </div>
-    <!-- Le choix des équipements -->
+    <!-- Le choix des Ã©quipements -->
     <div class="contenair contenairCenter contenairEquipment">
       <div class="row">
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6">
@@ -575,7 +577,7 @@
         </div>
       </div>
     </div>
-    <!-- Le choix des équipements 2 EQUIPEMENTS -->
+    <!-- Le choix des Ã©quipements 2 EQUIPEMENTS -->
     <div class="container" id="">
 
       <!-- choix design-->
@@ -597,7 +599,7 @@
               <i class=" colorvalid fa fa-check-circle fa-3x text-center" v-show="reposePied" aria-hidden="true"></i>
               <i class="  colorvalidRed fa fa-minus-circle fa-3x text-center " v-show="reposePied" @click="deleteElementDesign('reposePied')" aria-hidden="true"></i> 
               
-              <p class=" text-center text-uppercase">REPOSE PIEDS<br/>96€</p>
+              <p class=" text-center text-uppercase">REPOSE PIEDS<br/>96â‚¬</p>
             </div>
             <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xd-12 text-center">
               <img
@@ -610,7 +612,7 @@
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x text-center" v-show="packHeritage" aria-hidden="true"></i>
               <i class="  colorvalidRed fa fa-minus-circle fa-3x text-center " v-show="packHeritage" @click="deleteElementDesign('packHeritage')" aria-hidden="true"></i> 
-                 <p class=" text-center text-uppercase">PACK HERITAGE<br/>180€</p>
+                 <p class=" text-center text-uppercase">PACK HERITAGE<br/>180â‚¬</p>
               
             
             </div>
@@ -629,7 +631,7 @@
                 
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="stationnementArriere" aria-hidden="true"></i>
               <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="stationnementArriere" @click="deleteElementConduite('stationnementArriere')" aria-hidden="true"></i> 
-              <p class=" text-center text-uppercase">AIDE STATIONNEMENT arrière<br/>420€</p>
+              <p class=" text-center text-uppercase">AIDE STATIONNEMENT arriÃ¨re<br/>420â‚¬</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
               <img
@@ -642,7 +644,7 @@
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="stationnementArriereAvant" aria-hidden="true"></i>
               <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="stationnementArriereAvant" @click="deleteElementConduite('stationnementAvant')" aria-hidden="true"></i>
-              <p class=" text-center text-uppercase">AIDE STATIONNEMENT AVANT<br/>750€</p>
+              <p class=" text-center text-uppercase">AIDE STATIONNEMENT AVANT<br/>750â‚¬</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
                 <img
@@ -655,7 +657,7 @@
               <!-- validation symbol-->
             <i class=" colorvalid fa fa-check-circle fa-3x" v-show="cameraRecul" aria-hidden="true"></i>
             <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="cameraRecul" @click="deleteElementConduite('cameraRecul')" aria-hidden="true"></i>  
-            <p class=" text-center text-uppercase">Camera recul<br/>1200€</p>
+            <p class=" text-center text-uppercase">Camera recul<br/>1200 â‚¬</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 marginSeat text-center">
                 <img
@@ -668,7 +670,7 @@
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="echappementSport" aria-hidden="true"></i>
               <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="echappementSport" @click="deleteElementConduite('echappementSport')" aria-hidden="true"></i>
-              <p class=" text-center text-uppercase">ECHAPPEMENT SPORT<br/>1500€</p>
+              <p class=" text-center text-uppercase">ECHAPPEMENT SPORT<br/>1500 â‚¬</p>
             </div>
           </div>
           <!-- les 4 images Confort -->
@@ -685,7 +687,7 @@
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="packRangement" aria-hidden="true"></i>
               <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="packRangement" @click="deleteElementConfort('packRangement')"  aria-hidden="true"></i>
 
-              <p class=" text-center text-uppercase">Pack rangement<br/>504€</p>
+              <p class=" text-center text-uppercase">Pack rangement<br/>504 â‚¬</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
               <img
@@ -698,7 +700,7 @@
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="regulateurVitesse" aria-hidden="true"></i>
               <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="regulateurVitesse" @click="deleteElementConfort('regulateurVitesse')" aria-hidden="true"></i> 
-              <p class=" text-center text-uppercase">regulation limit vitesse<br/>0€</p>
+              <p class=" text-center text-uppercase">regulation limit vitesse<br/>0 â‚¬</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
               <img
@@ -711,7 +713,7 @@
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="retroExterieur" aria-hidden="true"></i>
               <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="retroExterieur" @click="deleteElementConfort('retroExterieur')" aria-hidden="true"></i> 
-              <p class=" text-center text-uppercase">retro exterieur<br/>504€</p>
+              <p class=" text-center text-uppercase">retro exterieur<br/>504 â‚¬</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 marginSeat text-center">
               <img
@@ -724,7 +726,7 @@
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="retroInterieur" aria-hidden="true"></i>
               <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="retroInterieur" @click="deleteElementConfort('retroInterieur')" aria-hidden="true"></i>
-              <p class=" text-center text-uppercase">retro interieur electrochrome<br/>0€</p>
+              <p class=" text-center text-uppercase">retro interieur electrochrome<br/>0 â‚¬</p>
             </div>
           </div>
             <!-- les 4 images Media -->
@@ -740,7 +742,7 @@
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="audioFocal" aria-hidden="true"></i>
               <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="audioFocal" aria-hidden="true"></i> 
-              <p class=" text-center text-uppercase">Audio focal<br/>600€</p>
+              <p class=" text-center text-uppercase">Audio focal<br/>600 â‚¬</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
               <img
@@ -753,7 +755,7 @@
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="audioPremium" aria-hidden="true"></i>
               <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementMedia('audioPremium')" v-show="audioPremium" aria-hidden="true"></i>
-              <p class=" text-center text-uppercase">Audio premium<br/>1200€</p>
+              <p class=" text-center text-uppercase">Audio premium<br/>1200â‚¬</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
                 <img
@@ -766,7 +768,7 @@
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="audioStandard" aria-hidden="true"></i>
               <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementMedia('audioStandard')"  v-show="audioStandard" aria-hidden="true"></i> 
-              <p class=" text-center text-uppercase">Audio standard<br/>0€</p>
+              <p class=" text-center text-uppercase">Audio standard<br/>0â‚¬</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 marginSeat text-center">
                 <img
@@ -779,10 +781,10 @@
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="alpineMetrics" aria-hidden="true"></i>
               <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementMedia('alpineMetrics')" v-show="alpineMetrics" aria-hidden="true"></i> 
-              <p class=" text-center text-uppercase">alpine metrics<br/>204€</p>
+              <p class=" text-center text-uppercase">alpine metrics<br/>204â‚¬</p>
             </div>
           </div>
-          <!-- Choix sécurity 3 images-->
+          <!-- Choix sï¿½curity 3 images-->
           <div class="row text-center" v-if="security" >
               <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xd-12">
                 <img
@@ -795,7 +797,7 @@
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="aideFreinage" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementSecurity('aideFreinage')" v-show="aideFreinage" aria-hidden="true"></i>
-                <p class=" text-center text-uppercase">aide freinage<br/>0€</p>
+                <p class=" text-center text-uppercase">aide freinage<br/>0â‚¬</p>
               </div>
               <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xd-12">
                 <img
@@ -808,7 +810,7 @@
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="airbag" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementSecurity('airbag')" v-show="airbag" aria-hidden="true"></i>
-                <p class=" text-center text-uppercase">airbag<br/>0€</p>
+                <p class=" text-center text-uppercase">airbag<br/>0â‚¬</p>
               </div>
               <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xd-12">
                 <img
@@ -821,7 +823,7 @@
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="freinageHautePerfomance" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="freinageHautePerfomance" @click="deleteElementSecurity('freinageHautePerfomance')" aria-hidden="true"></i> 
-                <p class=" text-center text-uppercase">freinage haute perfomance<br/>1000€</p>
+                <p class=" text-center text-uppercase">freinage haute perfomance<br/>1000â‚¬</p>
               </div>
             </div>
               <!-- les 3 images Perso exterieur  -->
@@ -837,7 +839,7 @@
               <!-- validation symbol-->
             <i class=" colorvalid fa fa-check-circle fa-3x" v-show="etrierBleu" aria-hidden="true"></i>
             <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoExterieur('etrierBleu')" v-show="etrierBleu" aria-hidden="true"></i>
-            <p class=" text-center text-uppercase">etrier bleu<br/>384€</p>
+            <p class=" text-center text-uppercase">etrier bleu<br/>384â‚¬</p>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6">
             <img
@@ -850,7 +852,7 @@
               <!-- validation symbol-->
             <i class=" colorvalid fa fa-check-circle fa-3x" v-show="etrierGris" aria-hidden="true"></i>
             <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoExterieur('etrierGris')" v-show="etrierGris" aria-hidden="true"></i> 
-            <p class=" text-center text-uppercase">etrier gris<br/>0€</p>
+            <p class=" text-center text-uppercase">etrier gris<br/>0â‚¬</p>
           </div>
             <div class=" mx-auto">
               <img
@@ -863,7 +865,7 @@
               <!-- validation symbol-->
             <i class=" colorvalid fa fa-check-circle fa-3x" v-show="logoAlpine" aria-hidden="true"></i>
             <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoExterieur('logoAlpine')" v-show="logoAlpine" aria-hidden="true"></i>
-            <p class="text-uppercase text-center">Logo Alpine<br/>120€</p>
+            <p class="text-uppercase text-center">Logo Alpine<br/>120â‚¬</p>
             </div>  
         </div>
           <!-- les 4 images Perso interieur -->
@@ -879,7 +881,7 @@
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="logoVolant" aria-hidden="true"></i>
           <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoInterieur('logoVolant')" v-show="logoVolant" aria-hidden="true"></i> 
-          <p class=" text-center text-uppercase">logo volant<br/>84€</p>
+          <p class=" text-center text-uppercase">logo volant<br/>84â‚¬</p>
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
           <img
@@ -892,7 +894,7 @@
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="packCarbone" aria-hidden="true"></i>
           <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoInterieur('packCarbone')" v-show="packCarbone" aria-hidden="true"></i>
-          <p class=" text-center text-uppercase">pack carbone<br/>0€</p>
+          <p class=" text-center text-uppercase">pack carbone<br/>0â‚¬</p>
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
             <img
@@ -905,7 +907,7 @@
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="pedalAlu" aria-hidden="true"></i>
           <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoInterieur('pedalAlu')" v-show="pedalAlu" aria-hidden="true"></i>
-          <p class=" text-center text-uppercase">pedal alu<br/>120€</p>
+          <p class=" text-center text-uppercase">pedal alu<br/>120â‚¬</p>
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 marginSeat text-center">
             <img
@@ -918,7 +920,7 @@
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="siegeChauffant" aria-hidden="true"></i>
           <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoInterieur('siegeChauffant')" v-show="siegeChauffant" aria-hidden="true"></i>
-          <p class=" text-center text-uppercase">siège chauffant<br/>400€</p>
+          <p class=" text-center text-uppercase">siÃ¨ge chauffant<br/>400â‚¬</p>
         </div>
       </div>
 
@@ -1042,9 +1044,9 @@
     <div class=" contenair contenairShop2">
       <div class="row flex-wrapLG">
         <button
-          class="BouttonSecondPrix rounded col-12 col-sm-12 col-md-12 col-lg-8 col-xd-8"
+          class="BouttonSecondPrix  rounded col-6 col-sm-6 col-md-6 col-lg-8 col-xd-8"
         >
-          ${priceEquipements} € 
+          ${priceEquipements} â‚¬ 
         </button>
         <button
           class="buttonShop2 rounded col-6 col-sm-6 col-md-6 col-lg-4 col-xd-4"
@@ -1095,7 +1097,7 @@
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="alarm" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="alarm"  @click="deleteElementTransportProtection('alarm')" aria-hidden="true"></i>
-                <p style="text-align: center;">ALARM <br />543€</p>
+                <p style="text-align: center;">ALARM <br />543 â‚¬</p>
               </div>
               <div class=" SmallContenairColor">
                 <img
@@ -1108,7 +1110,7 @@
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="chaine" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="chaine"  @click="deleteElementTransportProtection('chaine')" aria-hidden="true"></i>
-                <p style="text-align: center;">CHAINE <br />336€</p>
+                <p style="text-align: center;">CHAINE <br />336 â‚¬</p>
               </div>
               <div class=" SmallContenairColor">
                 <img
@@ -1121,7 +1123,7 @@
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="extincteur" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="extincteur"  @click="deleteElementTransportProtection('extincteur')" aria-hidden="true"></i>
-                <p class="text-align: center;">EXTINCTEUR<br />22€</p>
+                <p class="text-align: center;">EXTINCTEUR<br />22 â‚¬</p>
               </div>
             </div>
             <!-- Deuxieme ligne de 3 images-->
@@ -1137,7 +1139,7 @@
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="fixation" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="fixation"  @click="deleteElementTransportProtection('fixation')" aria-hidden="true"></i>
-                <p style="text-align: center;">fIXATION <br />72€</p>
+                <p style="text-align: center;">fIXATION <br />72 â‚¬</p>
               </div>
               <div class=" SmallContenairColor">
                 <img
@@ -1150,7 +1152,7 @@
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="kitSecurite" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="kitSecurite"  @click="deleteElementTransportProtection('kitSecurite')" aria-hidden="true"></i>
-                <p style="text-align: center;">KIT SECURITE <br />20€</p>
+                <p style="text-align: center;">KIT SECURITE <br />20 â‚¬</p>
               </div>
               <div class=" SmallContenairColor">
                 <img
@@ -1163,7 +1165,7 @@
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="obd" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="obd"  @click="deleteElementTransportProtection('obd')" aria-hidden="true"></i>
-                <p class="text-align: center;">OBD<br />99€ </p>
+                <p class="text-align: center;">OBD<br />99 â‚¬ </p>
               </div>
             </div>
           </div>
@@ -1191,7 +1193,7 @@
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="supportCamera" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="supportCamera"  @click="deleteElementTransportProtection('supportCamera')" aria-hidden="true"></i>
-                <p style="text-align: center;">SUPPORT CAMERA<br />89€</p>
+                <p style="text-align: center;">SUPPORT CAMERA<br />89 â‚¬</p>
               </div>
               <div class=" SmallContenairColor">
                 <img
@@ -1204,7 +1206,7 @@
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="supportSmartphone" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="supportSmartphone"  @click="deleteElementTransportProtection('supportSmartphone')" aria-hidden="true"></i>
-                <p style="text-align: center;">SUPPORT SMARTPHONE<br />21€</p>
+                <p style="text-align: center;">SUPPORT SMARTPHONE<br />21 â‚¬</p>
               </div>
           </div>
         </div>
@@ -1231,7 +1233,7 @@
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="filet" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="filet"  @click="deleteElementInterieur('filet')" aria-hidden="true"></i>
-                <p style="text-align: center;">FILET<br />59€</p>
+                <p style="text-align: center;">FILET<br />59 â‚¬</p>
               </div>
               <div class=" SmallContenairColor">
                 <img
@@ -1244,7 +1246,7 @@
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="tapis" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="tapis"  @click="deleteElementInterieur('tapis')" aria-hidden="true"></i>
-                <p style="text-align: center;">TAPIS<br />83€</p>
+                <p style="text-align: center;">TAPIS<br />83 â‚¬</p>
               </div>
           </div>
           </div>
@@ -1272,7 +1274,7 @@
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="chargeurBatterie" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="chargeurBatterie"  @click="deleteElementMaterielGarage('chargeurBatterie')" aria-hidden="true"></i>
-                <p style="text-align: center;">CHARGEUR BATTERIE<br />240€</p>
+                <p style="text-align: center;">CHARGEUR BATTERIE<br />240 â‚¬</p>
               </div>
               <div class=" SmallContenairColor">
                 <img
@@ -1285,7 +1287,7 @@
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="kitOutils" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="kitOutils"  @click="deleteElementMaterielGarage('kitOutils')" aria-hidden="true"></i>
-                <p style="text-align: center;">KIT OUTILS<br />393€</p>
+                <p style="text-align: center;">KIT OUTILS<br />393 â‚¬</p>
               </div>
           </div>
           </div>
@@ -1313,7 +1315,7 @@
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="antivol" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="antivol"  @click="deleteElementExterieur('antivol')" aria-hidden="true"></i>
-                <p style="text-align: center;">ANTIVOL<br />57€</p>
+                <p style="text-align: center;">ANTIVOL<br />57 â‚¬</p>
               </div>
               <div class=" SmallContenairColor">
                 <img
@@ -1325,7 +1327,7 @@
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="cabochons" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="cabochons"  @click="deleteElementExterieur('cabochons')" aria-hidden="true"></i>
-                <p style="text-align: center;">CABOCHONS<br />24€</p>
+                <p style="text-align: center;">CABOCHONS<br />24 â‚¬</p>
               </div>
               <div class=" SmallContenairColor">
                 <img
@@ -1337,7 +1339,7 @@
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="housse" aria-hidden="true"></i>
                 <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="housse"  @click="deleteElementExterieur('housse')" aria-hidden="true"></i>  
-                <p style="text-align: center;">HOUSSE<br />216€</p>
+                <p style="text-align: center;">HOUSSE<br />216 â‚¬</p>
               </div>
           </div>
           </div>
@@ -1350,9 +1352,9 @@
     <div class=" contenair contenairShop2" style="margin-top:20px;">
       <div class="row flex-wrapLG">
         <button
-          class="BouttonSecondPrix rounded col-12 col-sm-12 col-md-12 col-lg-8 col-xd-8"
+          class="BouttonSecondPrix  rounded col-6 col-sm-6 col-md-6 col-lg-8 col-xd-8"
         >
-          ${priceAccessoire} € 
+          ${priceAccessoire} â‚¬
         </button>
         <button
           class="buttonShop2 rounded col-6 col-sm-6 col-md-6 col-lg-4 col-xd-4"
@@ -1456,9 +1458,9 @@
     <div class=" contenair contenairShop2">
       <div class="row flex-wrapLG">
         <button
-          class="BouttonSecondPrix rounded col-12 col-sm-12 col-md-12 col-lg-8 col-xd-8">
-          <!-- TO DO : message à afficher par défaut à l'aide du blade de Laravel-->
-          ${priceTotalDisplay}€
+          class="BouttonSecondPrix rounded col-6 col-sm-6 col-md-6 col-lg-8 col-xd-8">
+          <!-- TO DO : message ï¿½ afficher par dï¿½faut ï¿½ l'aide du blade de Laravel-->
+          ${priceTotalDisplay} â‚¬
         </button>
         <button
           class="buttonShopAchat rounded col-6 col-sm-6 col-md-6 col-lg-4 col-xd-4">

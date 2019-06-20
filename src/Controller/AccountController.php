@@ -18,10 +18,10 @@ class AccountController extends AbstractController
     /**
      * @Route("/login", name="account_login")
      */
-    public function login(AuthenticationUtils $utils)
+    public function login(AuthenticationUtils $auth)
     {
-        $error = $utils->getLastAuthenticationError();
-        $username = $utils->getLastUsername();
+        $error = $auth->getLastAuthenticationError();
+        $username = $auth->getLastUsername();
         
 
         return $this->render('account/login.html.twig' ,[             
@@ -37,7 +37,8 @@ class AccountController extends AbstractController
      * @return void
      */
     public function logout() {
-        // .. rien !
+        // controller can be blank: it will never be executed!
+        throw new \Exception('Don\'t forget to activate logout in security.yaml');
     }
 
     /**

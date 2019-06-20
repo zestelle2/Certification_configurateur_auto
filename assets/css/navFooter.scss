@@ -41,10 +41,10 @@ html,  body {
     color: #212529;
     text-align: left;
     list-style: none;
-    background-color: transparent;
+    cursor: pointer;
+    background-color: #3385c6;
     background-clip: padding-box;
-
-    border: transparent !important;
+    border: transparent;
 }
 
 .dropdown{
@@ -140,7 +140,7 @@ html,  body {
 }
 
 .dropdown-item{
-            
+    cursor: pointer;
     &:hover{
         background-color: rgb(95, 159, 212)!important;
         padding-left: 3px;
@@ -150,7 +150,7 @@ html,  body {
 
 .buttonDropdown{
 
-    color: #fff;
+    color: white !important;
 
     border: transparent;
     
@@ -247,9 +247,6 @@ footer{
 
 }
 
-
-
-/*derniere section */
 
 
 
@@ -399,6 +396,13 @@ footer{
 
 @media screen and (max-width:991px){
 
+    /*menu hambuger */
+    .navbar-collapse{
+        background-color: black;
+        padding: 10px;
+    }
+
+
     .positionAbsolutionMargin {
         margin-left: -12px !important;
     }
@@ -452,7 +456,6 @@ footer{
 footer
 {
     position: absolute;
-    bottom: 0;
     width: 100%;
 
 }

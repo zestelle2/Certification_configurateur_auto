@@ -24,24 +24,21 @@
 
 <div class="container register">
     <div class="row">
-        <div class="col-md-3 register-left">
+        <div class="col-md-3  col-sm-12 col-12  register-left">
             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
             <h3>Bienvenue</h3>
-            <p>Inscrivez-vous et achetez la voiture de vos rêves !</p>
+            <p>Inscrivez-vous et découvrez la voiture de vos rêves !</p>
             <btn class="buttonClass"/> se connecter<btn/>
         </div>
-        <div class="col-md-9 register-right">
-            <div style="
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            flex-direction: column !important;" >
+        <div class="col-md-9  col-sm-12 col-12  register-right">
+            <div class="contenairRegister" >
                 <h3 class="register-heading">Inscription</h3>
-                <div class="row register-form flexCenterCollum ">
-                    <div class="col-md-6 flexCenterCollum opaccityForm ">
+                <div class="row register-form flexCenterCollum" style="height:92%;">
+                    <div class="col-md-6 col-sm-12 col-12 flexCenterCollum opaccityForm ">
 
                         {{ form_start(form) }}
 
+                        {{ form_row(form._token) }}
                         {{ form_row(form.firstName) }}
                         {{ form_row(form.lastName) }}
 
@@ -51,15 +48,16 @@
                         
                             
                     </div>
-                    <div class="col-md-6 flexCenterCollum opaccityForm ">
+                    <div class="col-md-6 col-sm-12 col-12 flexCenterCollum opaccityForm ">
 
             
-                        {{ form_row(form.email , { 'label_attr': { 'class' : "mt-3"}}) }}
+                        {{ form_row(form.email) }}
                         {{ form_row(form.adress) }}
                         {{ form_row(form.country) }}
-                        {{ form_row(form.avatard) }}
-
+                        
                         <input type="submit" class="btnRegister"  value="Confirmez l'inscription"/>
+
+                        {{ form_end(form) }}
                     </div>
                 </div>
             </div>

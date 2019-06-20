@@ -793,7 +793,7 @@ footer{
         height: 80%;
         margin-left : 97% !important;
         border: 2px solid #00a2e5;
-        margin-top: -90px;
+        margin-top: -10px;
         z-index: 9999;
     }
 
@@ -840,4 +840,15 @@ footer{
   
     
     
+}
+
+/* média querie pour IPhone */
+@media (min-height: 500px) and (min-width: 580px) {
+    /* CSS stuff */
+    .custom-iconUl{
+
+        position: absolute;
+        margin-top: 20%;
+
+    }
 }
