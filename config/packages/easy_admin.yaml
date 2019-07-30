@@ -21,17 +21,60 @@ easy_admin:
           label: 'Auto'
           list:
             fields: 
-              - 'id' 
-              - { property: 'versionName' , label: 'Nom de version' }
+              - 'id'
+              - { property: 'buyer' , label: 'acheteur' }
               - { property: 'versionPrice' , label: 'Prix de la version' }
-              - { property: 'colorName', label: 'Couleur de la voiture' }
               - { property: 'colorPrice' , label: 'Prix de la couleur' }
-              - { property: 'rimsName' , label: 'Jantes choisie : ' }
               - { property: 'rimsPrice' , label: 'prix des jante' }
+              # equipment
+              - { property: 'footrest' , label: 'repose pied' }
+              - { property: 'heritagePack' , label: 'pack heritage' }
+              - { property: 'helpParkingBack' , label: 'Aide stationnement arrière' }
+              - { property: 'helpParkingBefore' , label: 'Aide stationnement avant' }
+              - { property: 'reverseCamera' , label: 'caméra de recul' }
+              - { property: 'sportExhaust' , label: 'sport de réhaussement' }
+              - { property: 'storagePack' , label: 'pack de rangement' }
+              - { property: 'cruiseControl' , label: 'Régulateur de vitesse' }
+              - { property: 'outsideRetro' , label: 'Rétro extérieur' }
+              - { property: 'interiorMirror' , label: 'Rétro Intérieur' }
+              - { property: 'focalSound' , label: 'audio focal' }
+              - { property: 'premiumAudio' , label: 'audio Premium' }
+              - { property: 'sound' , label: 'Audio' }
+              - { property: 'alpineMetrics' , label: 'métrics Alpin' }
+              - { property: 'bleuCalliper' , label: 'étrier bleu' }
+              - { property: 'greyCalliper' , label: 'étrier gris' }
+              - { property: 'alpineLogo' , label: 'logo Alpin' }
+              - { property: 'wheelLogo' , label: 'logo volant' }
+              - { property: 'carbonePack' , label: 'pack carbonne' }
+              - { property: 'aluminumPedal' , label: 'Pédal Alu' }
+              - { property: 'heatedSeat' , label: 'Siège chauffante' }
+              - { property: 'brakeAssist' , label: 'aide au Freinage' }
+              - { property: 'highPerformanceBrake' , label: 'freinage de performance' }
+              - { property: 'airbag' , label: 'Airbag' }
+              #Accessoires
+              - { property: 'alarm' , label: 'alarm' }
+              - { property: 'chain' , label: 'chaîne' }
+              - { property: 'extinguishing' , label: 'Extincteur' }
+              - { property: 'fixation' , label: 'fixation' }
+              - { property: 'kitSecurity' , label: 'Kit de securité' }
+              - { property: 'obd' , label: 'obd' }
+              - { property: 'cameraSupport' , label: 'Support de caméra' }
+              - { property: 'smartphoneSupport' , label: 'Smartphone Support' }
+              - { property: 'net' , label: 'fillet' }
+              - { property: 'mat' , label: 'tapis' }
+              - { property: 'batteryCharger' , label: 'Batterie de secours' }
+              - { property: 'kitTools' , label: 'kit outils' }
+              - { property: 'antiTheft' , label: 'antivol' }
+              - { property: 'cabochons' , label: 'cabochons' }
+              - { property: 'cover' , label: 'housse' }
+
+
+
+
+
+
           title: 'Liste %%entity_label%% '
 
-        Equipment:
-          class: App\Entity\Equipment
-        Accessory:
-          class: App\Entity\Accessory
+
+
     site_name: 'Alpin' 

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Auto;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
@@ -53,8 +54,10 @@ class UserController extends AbstractController
      */
     public function show(User $user): Response
     {
+
+
         return $this->render('user/show.html.twig', [
-            'user' => $user,
+            'user' => $user
         ]);
     }
 
@@ -66,12 +69,14 @@ class UserController extends AbstractController
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
+        $id = $user->getId();
+
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('user_index', [
-                'id' => $user->getId(),
-            ]);
+
+
+            return $this->redirectToRoute('user_show' , ['id' => $id ]);
         }
 
         return $this->render('user/edit.html.twig', [

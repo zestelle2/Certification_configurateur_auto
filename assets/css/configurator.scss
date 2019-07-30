@@ -617,6 +617,11 @@ footer{
     }
 }
 
+.formHidden{
+    position: absolute;
+    bottom: 90000px;
+    visibility: hidden;
+}
 
 @media only screen and (max-width: 900px) {
 

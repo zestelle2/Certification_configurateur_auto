@@ -1,0 +1,210 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Auto{% endblock %}
+
+{% block body %}
+    <h1>Auto</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ auto.id }}</td>
+            </tr>
+            <tr>
+                <th>VersionName</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>VersionPrice</th>
+                <td>{{ auto.versionPrice }}</td>
+            </tr>
+            <tr>
+                <th>ColorName</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>ColorPrice</th>
+                <td>{{ auto.colorPrice }}</td>
+            </tr>
+            <tr>
+                <th>RimsName</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>RimsPrice</th>
+                <td>{{ auto.rimsPrice }}</td>
+            </tr>
+            <tr>
+                <th>SeatName</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>SeatPrice</th>
+                <td>{{ auto.seatPrice }}</td>
+            </tr>
+            <tr>
+                <th>Footrest</th>
+                <td>{{ auto.footrest }}</td>
+            </tr>
+            <tr>
+                <th>HeritagePack</th>
+                <td>{{ auto.heritagePack }}</td>
+            </tr>
+            <tr>
+                <th>HelpParkingBack</th>
+                <td>{{ auto.helpParkingBack }}</td>
+            </tr>
+            <tr>
+                <th>HelpParkingBefore</th>
+                <td>{{ auto.helpParkingBefore }}</td>
+            </tr>
+            <tr>
+                <th>ReverseCamera</th>
+                <td>{{ auto.reverseCamera }}</td>
+            </tr>
+            <tr>
+                <th>SportExhaust</th>
+                <td>{{ auto.sportExhaust }}</td>
+            </tr>
+            <tr>
+                <th>StoragePack</th>
+                <td>{{ auto.storagePack }}</td>
+            </tr>
+            <tr>
+                <th>CruiseControl</th>
+                <td>{{ auto.cruiseControl }}</td>
+            </tr>
+            <tr>
+                <th>OutsideRetro</th>
+                <td>{{ auto.outsideRetro }}</td>
+            </tr>
+            <tr>
+                <th>InteriorMirror</th>
+                <td>{{ auto.interiorMirror }}</td>
+            </tr>
+            <tr>
+                <th>FocalSound</th>
+                <td>{{ auto.focalSound }}</td>
+            </tr>
+            <tr>
+                <th>PremiumAudio</th>
+                <td>{{ auto.premiumAudio }}</td>
+            </tr>
+            <tr>
+                <th>Sound</th>
+                <td>{{ auto.sound }}</td>
+            </tr>
+            <tr>
+                <th>AlpineMetrics</th>
+                <td>{{ auto.AlpineMetrics }}</td>
+            </tr>
+            <tr>
+                <th>BleuCalliper</th>
+                <td>{{ auto.BleuCalliper }}</td>
+            </tr>
+            <tr>
+                <th>GreyCalliper</th>
+                <td>{{ auto.GreyCalliper }}</td>
+            </tr>
+            <tr>
+                <th>AlpineLogo</th>
+                <td>{{ auto.alpineLogo }}</td>
+            </tr>
+            <tr>
+                <th>WheelLogo</th>
+                <td>{{ auto.wheelLogo }}</td>
+            </tr>
+            <tr>
+                <th>CarbonePack</th>
+                <td>{{ auto.carbonePack }}</td>
+            </tr>
+            <tr>
+                <th>AluminumPedal</th>
+                <td>{{ auto.aluminumPedal }}</td>
+            </tr>
+            <tr>
+                <th>HeatedSeat</th>
+                <td>{{ auto.heatedSeat }}</td>
+            </tr>
+            <tr>
+                <th>BrakeAssist</th>
+                <td>{{ auto.brakeAssist }}</td>
+            </tr>
+            <tr>
+                <th>HighPerformanceBrake</th>
+                <td>{{ auto.highPerformanceBrake }}</td>
+            </tr>
+            <tr>
+                <th>Airbag</th>
+                <td>{{ auto.airbag }}</td>
+            </tr>
+            <tr>
+                <th>Alarm</th>
+                <td>{{ auto.alarm }}</td>
+            </tr>
+            <tr>
+                <th>Chain</th>
+                <td>{{ auto.chain }}</td>
+            </tr>
+            <tr>
+                <th>Extinguishing</th>
+                <td>{{ auto.extinguishing }}</td>
+            </tr>
+            <tr>
+                <th>Fixation</th>
+                <td>{{ auto.fixation }}</td>
+            </tr>
+            <tr>
+                <th>KitSecurity</th>
+                <td>{{ auto.kitSecurity }}</td>
+            </tr>
+            <tr>
+                <th>Obd</th>
+                <td>{{ auto.obd }}</td>
+            </tr>
+            <tr>
+                <th>CameraSupport</th>
+                <td>{{ auto.cameraSupport }}</td>
+            </tr>
+            <tr>
+                <th>SmartphoneSupport</th>
+                <td>{{ auto.smartphoneSupport }}</td>
+            </tr>
+            <tr>
+                <th>Net</th>
+                <td>{{ auto.net }}</td>
+            </tr>
+            <tr>
+                <th>Mat</th>
+                <td>{{ auto.mat }}</td>
+            </tr>
+            <tr>
+                <th>BatteryCharger</th>
+                <td>{{ auto.batteryCharger }}</td>
+            </tr>
+            <tr>
+                <th>KitTools</th>
+                <td>{{ auto.kitTools }}</td>
+            </tr>
+            <tr>
+                <th>AntiTheft</th>
+                <td>{{ auto.antiTheft }}</td>
+            </tr>
+            <tr>
+                <th>Cabochons</th>
+                <td>{{ auto.cabochons }}</td>
+            </tr>
+            <tr>
+                <th>Cover</th>
+                <td>{{ auto.cover }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('auto_index') }}">back to list</a>
+
+    <a href="{{ path('auto_edit', {'id': auto.id}) }}">edit</a>
+
+    {{ include('auto/_delete_form.html.twig') }}
+{% endblock %}

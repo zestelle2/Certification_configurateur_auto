@@ -1,159 +1,194 @@
 
 <div class="d-flex flex-wrap">
-    <!-- ACCESSORY -->
-    <!--pure -->
-    {% if auto.versionPrice == 54700 %}
-        <div class="elementAuto col-3">
+    <!--  accessories -->
+    <!--alarm -->
+    {% if auto.versionPrice == 543 %}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
             <img
-                    src="/picture/configurateur/modele/selection/pure.png"
-                    alt="version Pure"
+                    src="/picture/configurateur/accessoires/transport et protection/alarme.jpg"
+                    alt="arlam voiture alpin"
                     class="imageRelatif img-fluid"
             />
-            <p><strong> Pure </strong> 54 700 € </p>
+            <p><strong> Alarm </strong> 543 € </p>
         </div>
     {% endif %}
 
-    <!--legende -->
-    {% if auto.versionPrice == 58500 %}
-        <div class="elementAuto col-3">
+    <!--chain -->
+    {% if auto.chain == 336 %}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
             <img
-                    src="/picture/configurateur/modele/selection/legende.png"
-                    alt="version Pure"
+                    src="/picture/configurateur/accessoires/transport et protection/chaaine-neige.jpg"
+                    alt="chaîne de voiture alpin"
                     class="imageRelatif img-fluid"
             />
-            <p><strong> Legende </strong> 58 500€ </p>
+            <p><strong> chaînes </strong>336€ </p>
         </div>
 
     {% endif %}
 
-
-    <!-- Color-->
-    <!--bleu -->
-    {% if auto.colorPrice == 1800 %}
-        <div class="elementAuto col-3">
+    <!--EXTINCTEUR -->
+    {% if auto.extinguishing == 22 %}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
             <img
-                    src="/picture/configurateur/couleurs/selection/bleu.jpg"
+                    src="/picture/configurateur/accessoires/transport et protection/extincteur.jpg"
+                    alt="chaine alpin"
+                    class="imageRelatif img-fluid"
+            />
+            <p class="mt-3"><strong> extincteur </strong> 22 € </p>
+        </div>
+
+    {% endif %}
+    <!--fixation -->
+    {% if auto.fixation == 72 %}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
+            <img
+                    src="/picture/configurateur/accessoires/transport et protection/fixation-extincteur.jpg"
                     alt="color blue"
                     class="imageRelatif img-fluid"
             />
-            <p class="mt-3"><strong> bleu </strong> 1 800 € </p>
+            <p class="mt-3"><strong> fixation </strong> 72 € </p>
         </div>
 
     {% endif %}
-    <!--couleur noir -->
-    {% if auto.colorPrice == 840 %}
-        <div class="elementAuto col-3">
+
+    <!--kitSecurity -->
+    {% if auto.kitSecurity == 20 %}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
             <img
-                    src="/picture/configurateur/couleurs/selection/noir.jpg"
+                    src="/picture/configurateur/accessoires/transport et protection/kit-securite.jpg"
                     alt="color blue"
                     class="imageRelatif img-fluid"
             />
-            <p class="mt-3"><strong> noir </strong> 840 € </p>
+            <p class="mt-3"><strong> Kit de sécurité </strong> 20 €</p>
         </div>
 
     {% endif %}
 
-    <!--blanc -->
-    {% if auto.colorPrice == 0 %}
-        <div class="elementAuto col-3">
-            <img
-                    src="/picture/configurateur/couleurs/selection/blanc.jpg"
-                    alt="color blue"
-                    class="imageRelatif img-fluid"
-            />
-            <p class="mt-3"><strong> blanc </strong> 0 €</p>
-        </div>
-
-    {% endif %}
-
-    <!-- Jante-->
-    <!--standart -->
-    {% if auto.rimsPrice == 0 and auto.versionPrice != 58500 %}
-        <div class="elementAuto col-3">
+    <!--OBD -->
+    {% if auto.obd == 99 %}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
             <img
                     src="/picture/configurateur/jantes/selection/jante-standard.jpg"
-                    alt="color blue"
+                    alt="OBD alpin"
                     class="imageRelatif img-fluid"
             />
-            <p class="mt-3"><strong> Standart  </strong> 0 € </p>
+            <p class="mt-3"><strong> OBD  </strong> 99 € </p>
         </div>
 
     {% endif %}
-    <!--rims serac-->
-    {% if auto.rimsPrice == 1000 %}
-        <div class="elementAuto col-3">
+    <!--support camera-->
+    {% if auto.cameraSupport == 89 %}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
             <img
-                    src="/picture/configurateur/jantes/selection/jante-serac.jpg"
-                    alt="serac rims"
+                    src="/picture/configurateur/accessoires/multimedia/support-camera.jpg"
+                    alt="Support caméra Alpin"
                     class="imageRelatif img-fluid"
             />
-            <p class="mt-3"><strong> serac </strong> 1000 € </p>
+            <p class="mt-3"><strong> Support camera </strong> <br> 89 € </p>
         </div>
 
     {% endif %}
 
-    <!--legende -->
-    {% if auto.colorPrice == 0 and auto.versionPrice == 58500  %}
-        <div class="elementAuto col-3">
+    <!--smarphone -->
+    {% if auto.smartphoneSupport == 21  %}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
             <img
-                    src="/picture/configurateur/jantes/selection/jante-legende.jpg"
+                    src="/picture/configurateur/accessoires/multimedia/support-smartphone.jpg"
                     alt="rims legende"
                     class="imageRelatif img-fluid"
             />
-            <p class="mt-3"><strong> Légende </strong> 0 €</p>
+            <p class="mt-3"><strong> Suppport Smartphone </strong> <br> 21 €</p>
         </div>
 
     {% endif %}
 
 
-    <!-- Siège-->
-    <!--cnd -->
-    {% if auto.seatPrice == 0 and auto.versionPrice != 58500%}
-        <div class="elementAuto col-3">
+    <!--filet -->
+    {% if auto.net == 59%}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
             <img
                     src="/picture/configurateur/interieurs/selection/cuir-noir_dinamica.jpg"
                     alt="color blue"
                     class="imageRelatif img-fluid mt-3"
             />
-            <p class="mt-3"><strong> Cuire noir et Diamica  </strong> 0 € </p>
+            <p class="mt-3"><strong> filet </strong> 59 € </p>
         </div>
 
     {% endif %}
-    <!--siege cnp-->
-    {% if auto.seatPrice == 800 %}
-        <div class="elementAuto col-3">
+    <!--tapis-->
+    {% if auto.mat == 83 %}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
             <img
-                    src="/picture/configurateur/interieurs/selection/cuir-noir_perfore.jpg"
-                    alt="serac rims"
+                    src="/picture/configurateur/accessoires/interieur/tapis-coffre.jpg"
+                    alt="tapis alpin"
                     class="imageRelatif img-fluid mt-3"
             />
-            <p class="mt-3"><strong> Cuir Noir Perforé </strong><br> 800 € </p>
+            <p class="mt-3"><strong> tapis </strong><br> 83 € </p>
         </div>
 
     {% endif %}
 
-    <!--legende siege -->
-    {% if auto.seatPrice == 0 and auto.versionPrice == 58500  %}
-        <div class="elementAuto col-3">
+    <!--battery chargeur -->
+    {% if auto.batteryCharger == 240  %}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
             <img
-                    src="/picture/configurateur/jantes/selection/jante-legende.jpg"
+                    src="/picture/configurateur/accessoires/garage/chargeur-batterie.jpg"
                     alt="rims legende"
                     class="imageRelatif img-fluid mt-3"
             />
-            <p class="mt-3"><strong> cuir Noir </strong> 0 €</p>
+            <p class="mt-3"><strong> chargeur de batterie </strong>  <br>240 €</p>
         </div>
 
     {% endif %}
 
-    <!--CB siege -->
-    {% if auto.seatPrice == 800 and auto.versionPrice == 58500  %}
-        <div class="elementAuto col-3">
+    <!--CB kitTools -->
+    {% if auto.kitTools == 393  %}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
             <img
-                    src="/picture/configurateur/jantes/selection/jante-legende.jpg"
-                    alt="rims legende"
+                    src="/picture/configurateur/accessoires/garage/kit-outils.jpg"
+                    alt="kit outil legende"
                     class="imageRelatif img-fluid mt-3"
             />
-            <p class="mt-3"><strong> cuir brun </strong> 800 €</p>
+            <p class="mt-3"><strong> Kit Outils </strong> 393 €</p>
+        </div>
+
+    {% endif %}
+
+    <!--CB anti vol -->
+    {% if auto.antiTheft == 57  %}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
+            <img
+                    src="/picture/configurateur/accessoires/exterieur/antivol-jantes.jpg"
+                    alt="kit outil legende"
+                    class="imageRelatif img-fluid mt-3"
+            />
+            <p class="mt-3"><strong> antivol </strong> 57 €</p>
+        </div>
+
+    {% endif %}
+
+    <!--Cabochons -->
+    {% if auto.cabochons == 24 %}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
+            <img
+                    src="/picture/configurateur/accessoires/exterieur/cabochons-metal.jpg"
+                    alt="cabochons de la voiture Alpin"
+                    class="imageRelatif img-fluid mt-3"
+            />
+            <p class="mt-3"><strong> cabochons </strong> 24 €</p>
+        </div>
+
+    {% endif %}
+
+    <!--Cover -->
+    {% if auto.cover ==24 %}
+        <div class="elementAuto col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 ">
+            <img
+                    src="/picture/configurateur/accessoires/exterieur/housse.jpg"
+                    alt="housse de la voiture Alpin"
+                    class="imageRelatif img-fluid mt-3"
+            />
+            <p class="mt-3"><strong> cabochons </strong> 24 €</p>
         </div>
 
     {% endif %}

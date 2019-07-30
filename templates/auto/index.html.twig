@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Auto index{% endblock %}
+
+{% block body %}
+    <h1>Auto index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>VersionName</th>
+                <th>VersionPrice</th>
+                <th>ColorName</th>
+                <th>ColorPrice</th>
+                <th>RimsName</th>
+                <th>RimsPrice</th>
+                <th>SeatName</th>
+                <th>SeatPrice</th>
+                <th>Footrest</th>
+                <th>HeritagePack</th>
+                <th>HelpParkingBack</th>
+                <th>HelpParkingBefore</th>
+                <th>ReverseCamera</th>
+                <th>SportExhaust</th>
+                <th>StoragePack</th>
+                <th>CruiseControl</th>
+                <th>OutsideRetro</th>
+                <th>InteriorMirror</th>
+                <th>FocalSound</th>
+                <th>PremiumAudio</th>
+                <th>Sound</th>
+                <th>AlpineMetrics</th>
+                <th>BleuCalliper</th>
+                <th>GreyCalliper</th>
+                <th>AlpineLogo</th>
+                <th>WheelLogo</th>
+                <th>CarbonePack</th>
+                <th>AluminumPedal</th>
+                <th>HeatedSeat</th>
+                <th>BrakeAssist</th>
+                <th>HighPerformanceBrake</th>
+                <th>Airbag</th>
+                <th>Alarm</th>
+                <th>Chain</th>
+                <th>Extinguishing</th>
+                <th>Fixation</th>
+                <th>KitSecurity</th>
+                <th>Obd</th>
+                <th>CameraSupport</th>
+                <th>SmartphoneSupport</th>
+                <th>Net</th>
+                <th>Mat</th>
+                <th>BatteryCharger</th>
+                <th>KitTools</th>
+                <th>AntiTheft</th>
+                <th>Cabochons</th>
+                <th>Cover</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for auto in autos %}
+            <tr>
+                <td>{{ auto.versionPrice }}</td>
+                <td>{{ auto.colorPrice }}</td>
+                <td>{{ auto.rimsPrice }}</td>
+                <td>{{ auto.seatPrice }}</td>
+                <td>{{ auto.footrest }}</td>
+                <td>{{ auto.heritagePack }}</td>
+                <td>{{ auto.helpParkingBack }}</td>
+                <td>{{ auto.helpParkingBefore }}</td>
+                <td>{{ auto.reverseCamera }}</td>
+                <td>{{ auto.sportExhaust }}</td>
+                <td>{{ auto.storagePack }}</td>
+                <td>{{ auto.cruiseControl }}</td>
+                <td>{{ auto.outsideRetro }}</td>
+                <td>{{ auto.interiorMirror }}</td>
+                <td>{{ auto.focalSound }}</td>
+                <td>{{ auto.premiumAudio }}</td>
+                <td>{{ auto.sound }}</td>
+                <td>{{ auto.AlpineMetrics }}</td>
+                <td>{{ auto.BleuCalliper }}</td>
+                <td>{{ auto.GreyCalliper }}</td>
+                <td>{{ auto.alpineLogo }}</td>
+                <td>{{ auto.wheelLogo }}</td>
+                <td>{{ auto.carbonePack }}</td>
+                <td>{{ auto.aluminumPedal }}</td>
+                <td>{{ auto.heatedSeat }}</td>
+                <td>{{ auto.brakeAssist }}</td>
+                <td>{{ auto.highPerformanceBrake }}</td>
+                <td>{{ auto.airbag }}</td>
+                <td>{{ auto.alarm }}</td>
+                <td>{{ auto.chain }}</td>
+                <td>{{ auto.extinguishing }}</td>
+                <td>{{ auto.fixation }}</td>
+                <td>{{ auto.kitSecurity }}</td>
+                <td>{{ auto.obd }}</td>
+                <td>{{ auto.cameraSupport }}</td>
+                <td>{{ auto.smartphoneSupport }}</td>
+                <td>{{ auto.net }}</td>
+                <td>{{ auto.mat }}</td>
+                <td>{{ auto.batteryCharger }}</td>
+                <td>{{ auto.kitTools }}</td>
+                <td>{{ auto.antiTheft }}</td>
+                <td>{{ auto.cabochons }}</td>
+               {# <td>
+                    <a href="{{ path('auto_show', {'id': auto.id}) }}">show</a>
+                    <a href="{{ path('auto_edit', {'id': auto.id}) }}">edit</a>
+                </td>#}
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="49">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('auto_new') }}">Create new</a>
+{% endblock %}

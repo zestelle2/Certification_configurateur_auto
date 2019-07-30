@@ -35,6 +35,9 @@ Encore
     .addStyleEntry('css/login', './assets/css/login.scss')
     .addStyleEntry('css/register', './assets/css/register.scss')
 
+    .addStyleEntry('css/showUser', './assets/css/showUser.scss')
+
+
 
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')

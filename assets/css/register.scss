@@ -10,6 +10,19 @@ body{
     overflow-x: hidden !important;
 }
 
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .container{
     max-width: 100% !important;
     height: 100%;
@@ -206,12 +219,12 @@ html, body {
 
 /*footer */
 footer{
-    margin-top: 0 !important;
+    margin-top: -3% !important;
     left:0;
-    bottom: 0 !important;
+
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 767px) {
 
 
     
@@ -252,22 +265,56 @@ footer{
     footer{
         margin-top: 0 !important;
         left:0;
-        bottom: -100% !important;
+        bottom: -136%;
     }
 }
 
-@media only screen and (max-height: 643px){
+
+@media only screen and (max-width: 665px){
 
     footer{
-        bottom : -129% !important
+        margin-top: 0 !important;
+        left:0;
+        bottom: -126%;
     }
 }
 
-@media only screen and (max-height: 1000){
-.register-heading{
-    text-align: center;
-    margin-top: 2%;
-    margin-bottom: -15%;
-    color: #495057;
+@media only screen and (max-width: 565px){
+
+    footer{
+        margin-top: 0 !important;
+        left:0;
+        bottom: -116%;
+    }
 }
+
+
+
+@media only screen and (max-width: 465px){
+
+    footer{
+        margin-top: 0 !important;
+        left:0;
+        bottom: -106%;
+    }
 }
+
+
+@media only screen and (max-width: 1200px) and (min-width: 767px){
+
+    .register-heading {
+
+        margin-top: 7%;
+        margin-bottom: -11%;
+    }
+
+    .contenairRegister {
+        margin-top: 16%;
+    }
+
+    .register-left {
+        margin-top: 18%;
+    }
+}
+
+

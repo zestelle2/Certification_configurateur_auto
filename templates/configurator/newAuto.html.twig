@@ -108,10 +108,10 @@
               <div
                 class="col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 buttonMarginSection1Legend"
               >
-                <button v-on:click="buttonVersionPure" :class="pure? 'valid': 'noValid' "  class="buttonClass rounded">PURE</button>
+                <button v-on:click="buttonVersionPure" :class="pure? 'valid': 'noValid' "  class="buttonClass rounded" onclick="replaceValueInput('auto_versionPrice', 54700 )">PURE</button>
               </div>
               <div class="col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                <button v-on:click="buttonVersionLegende" :class="legende? 'valid': 'noValid' " class="buttonClass rounded">LEGENDE</button>
+                <button v-on:click="buttonVersionLegende" :class="legende? 'valid': 'noValid' " class="buttonClass rounded" onclick="replaceValueInput('auto_versionPrice', 58500)">LEGENDE</button>
               </div>
             </div>
           </div>
@@ -231,7 +231,8 @@
             src="/picture/configurateur/couleurs/selection/bleu.jpg"
             alt="third slide"
             style="max-width: 100%;"
-            @click="choiceColorBlue"/>
+            @click="choiceColorBlue"
+            onclick="replaceValueInput('auto_colorPrice', 1800 )"/>
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="blue" aria-hidden="true"></i>
           <p style="text-align: center;">Bleu Alpine <br />1 800 €</p>
@@ -242,7 +243,8 @@
             src="/picture/configurateur/couleurs/selection/blanc.jpg"
             alt="third slide"
             style="max-width: 100%;"
-            @click="choiceColorWhite"/>
+            @click="choiceColorWhite"
+            onclick="replaceValueInput('auto_colorPrice', 0 )"/>
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="white" aria-hidden="true"></i>
           <p style="text-align: center;">Blanc Glacé <br />0 €</p>
@@ -253,7 +255,8 @@
             src="/picture/configurateur/couleurs/selection/noir.jpg"
             alt="third slide"
             style="max-width: 100%;"
-            @click="choiceColorBlack"/>
+            @click="choiceColorBlack"
+            onclick="replaceValueInput('auto_colorPrice', 840 )"/>
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="black" aria-hidden="true"></i>
           <p style="text-align: center;">Noir Profond <br />840€</p>
@@ -310,6 +313,7 @@
             alt="third slide"
             style="max-width: 100%;"
             @click="choiceRimsStandard"
+            onclick="replaceValueInput('auto_rimsPrice', 0 )"
             />
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="standartRims" aria-hidden="true"></i>
@@ -323,7 +327,9 @@
             alt="third slide"
             style="max-width: 100%;"
             @click="choiceRimsSerac"
-            />
+            onclick="replaceValueInput('auto_rimsPrice', 1000 )"
+
+          />
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="seracRims" aria-hidden="true"></i>
           <p style="text-align: center;">Serac <br />1 000€</p>
@@ -335,7 +341,9 @@
             src="/picture/configurateur/jantes/selection/jante-legende.jpg"
             alt="third slide"
             style="max-width: 100%;"
-            @click="choiceRimsLegende"/>
+            @click="choiceRimsLegende"
+            onclick="replaceValueInput('auto_rimsPrice', 0 )"
+          />
 
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="legendeRims" aria-hidden="true"></i>
@@ -380,7 +388,9 @@
               src="/picture/configurateur/interieurs/selection/cuir-noir_dinamica.jpg"
               alt="third slide"
               style="max-width: 100%;"
-              @click="choiceSeatCnd"/>
+              @click="choiceSeatCnd"
+              onclick="replaceValueInput('auto_seatPrice', 0 )"
+            />
 
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="cndSeat" aria-hidden="true"></i>
@@ -393,7 +403,9 @@
               src="/picture/configurateur/interieurs/selection/cuir-noir_perfore.jpg"
               alt="third slide"
               style="max-width: 100%;"
-              @click="choiceSeatCnp"/>
+              @click="choiceSeatCnp"
+              onclick="replaceValueInput('auto_seatPrice', 800 )"
+            />
 
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="cnpSeat" aria-hidden="true"></i>
@@ -407,7 +419,9 @@
               src="/picture/configurateur/interieurs/selection/cuir-noir.jpg"
               alt="third slide"
               style="max-width: 100%;"
-              @click="choiceSeatCn"/>
+              @click="choiceSeatCn"
+              onclick="replaceValueInput('auto_seatPrice', 0 )"
+            />
 
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="cnSeat" aria-hidden="true"></i>
@@ -421,7 +435,9 @@
               src="/picture/configurateur/interieurs/selection/cuir-brun.jpg"
               alt="third slide"
               style="max-width: 100%;"
-              @click="choiceSeatCb"/>
+              @click="choiceSeatCb"
+              onclick="replaceValueInput('auto_seatPrice', 800 )"
+            />
               
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="cbSeat" aria-hidden="true"></i>
@@ -593,11 +609,17 @@
                 src="/picture/configurateur/equipements/categories/design/repose-pied-alu.jpg"
                 alt="third slide"
                 style="max-width: 100%;"
+                onclick="replaceValueInput('auto_footrest', 96 )"
+
                 @click="choiceReposePied"/>
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x text-center" v-show="reposePied" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x text-center " v-show="reposePied" @click="deleteElementDesign('reposePied')" aria-hidden="true"></i> 
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x text-center "
+                 v-show="reposePied"
+                 @click="deleteElementDesign('reposePied')"
+                 onclick="replaceValueInput('auto_footrest', 0.01 )"
+                 aria-hidden="true"></i>
               
               <p class=" text-center text-uppercase">REPOSE PIEDS<br/>96€</p>
             </div>
@@ -607,11 +629,18 @@
                 src="/picture/configurateur/equipements/categories/design/pack-heritage.jpg"
                 alt="third slide"
                 style="max-width: 100%;"
-                @click="choicePackHeritage"/>
+                @click="choicePackHeritage"
+                onclick="replaceValueInput('auto_heritagePack', 180 )"
+              />
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x text-center" v-show="packHeritage" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x text-center " v-show="packHeritage" @click="deleteElementDesign('packHeritage')" aria-hidden="true"></i> 
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x text-center "
+                 v-show="packHeritage"
+                 @click="deleteElementDesign('packHeritage')"
+                 onclick="replaceValueInput('auto_heritagePack', 0.01 )"
+                 aria-hidden="true"
+              ></i>
                  <p class=" text-center text-uppercase">PACK HERITAGE<br/>180€</p>
               
             
@@ -625,12 +654,18 @@
                 src="/picture/configurateur/equipements/categories/conduite/aide-stationnement-ar.jpg"
                 alt="third slide"
                 style="max-width: 100%;"
-                @click="choiceStationnementArriere"/>
+                @click="choiceStationnementArriere"
+                onclick="replaceValueInput('auto_helpParkingBack', 420 )"
+                />
               
                 <!-- validation symbol-->
                 
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="stationnementArriere" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="stationnementArriere" @click="deleteElementConduite('stationnementArriere')" aria-hidden="true"></i> 
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                 v-show="stationnementArriere"
+                 @click="deleteElementConduite('stationnementArriere')"
+                 onclick="replaceValueInput('auto_helpParkingBack', 0.01 )"
+                 aria-hidden="true"></i>
               <p class=" text-center text-uppercase">AIDE STATIONNEMENT arrière<br/>420€</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
@@ -639,11 +674,17 @@
                 src="/picture/configurateur/equipements/categories/conduite/aide-stationnement-av-ar.jpg"
                 alt="third slide"
                 style="max-width: 100%;"
-                @click="choiceStationnementArriereAvant"/>
+                @click="choiceStationnementArriereAvant"
+                onclick="replaceValueInput('auto_helpParkingBefore', 750 )"
+              />
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="stationnementArriereAvant" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="stationnementArriereAvant" @click="deleteElementConduite('stationnementAvant')" aria-hidden="true"></i>
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                 v-show="stationnementArriereAvant"
+                 @click="deleteElementConduite('stationnementAvant')"
+                 onclick="replaceValueInput('auto_helpParkingBefore', 0.01)"
+                 aria-hidden="true"></i>
               <p class=" text-center text-uppercase">AIDE STATIONNEMENT AVANT<br/>750€</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
@@ -652,11 +693,17 @@
                 src="/picture/configurateur/equipements/categories/conduite/camera-recul.jpg"
                 alt="third slide"
                 style="max-width: 100%;"
-                @click="choiceCameraRecul"/>
+                @click="choiceCameraRecul"
+                onclick="replaceValueInput('auto_reverseCamera', 1200 )"
+                />
               
               <!-- validation symbol-->
             <i class=" colorvalid fa fa-check-circle fa-3x" v-show="cameraRecul" aria-hidden="true"></i>
-            <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="cameraRecul" @click="deleteElementConduite('cameraRecul')" aria-hidden="true"></i>  
+            <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+               v-show="cameraRecul"
+               @click="deleteElementConduite('cameraRecul')"
+               onclick="replaceValueInput('auto_reverseCamera', 0.01 )"
+               aria-hidden="true"></i>
             <p class=" text-center text-uppercase">Camera recul<br/>1200 €</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 marginSeat text-center">
@@ -665,11 +712,17 @@
                 src="/picture/configurateur/equipements/categories/conduite/echappement-sport.jpg"
                 alt="third slide"
                 style="max-width: 100%;"
-                @click="choiceEchappementSport"/>
+                @click="choiceEchappementSport"
+                onclick="replaceValueInput('auto_sportExhaust', 1500 )"
+                />
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="echappementSport" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="echappementSport" @click="deleteElementConduite('echappementSport')" aria-hidden="true"></i>
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                 v-show="echappementSport"
+                 @click="deleteElementConduite('echappementSport')"
+                 onclick="replaceValueInput('auto_sportExhaust', 0.01 )"
+                 aria-hidden="true"></i>
               <p class=" text-center text-uppercase">ECHAPPEMENT SPORT<br/>1500 €</p>
             </div>
           </div>
@@ -681,11 +734,16 @@
               src="/picture/configurateur/equipements/categories/confort/pack-rangement.jpg"
               alt="third slide"
               style="max-width: 100%;"
-              @click="choicePackRangement"/>
+              @click="choicePackRangement"
+              onclick="replaceValueInput('auto_storagePack', 504 )"
+              />
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="packRangement" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="packRangement" @click="deleteElementConfort('packRangement')"  aria-hidden="true"></i>
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                 v-show="packRangement" @click="deleteElementConfort('packRangement')"
+                 onclick="replaceValueInput('auto_storagePack', 0.01 )"
+                 aria-hidden="true"></i>
 
               <p class=" text-center text-uppercase">Pack rangement<br/>504 €</p>
             </div>
@@ -695,11 +753,16 @@
               src="/picture/configurateur/equipements/categories/confort/regul-limit-vitesse.jpg"
               alt="third slide"
               style="max-width: 100%;"
-              @click="choiceRegulateurVitesse"/>
+              @click="choiceRegulateurVitesse"
+              onclick="replaceValueInput('auto_cruiseControl', 0 )"
+              />
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="regulateurVitesse" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="regulateurVitesse" @click="deleteElementConfort('regulateurVitesse')" aria-hidden="true"></i> 
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                 v-show="regulateurVitesse"
+                 @click="deleteElementConfort('regulateurVitesse')"
+                 aria-hidden="true"></i>
               <p class=" text-center text-uppercase">regulation limit vitesse<br/>0 €</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
@@ -708,11 +771,17 @@
               src="/picture/configurateur/equipements/categories/confort/retro-ext-chaffant.jpg"
               alt="third slide"
               style="max-width: 100%;"
-              @click="choiceRetroExterieur"/>
+              @click="choiceRetroExterieur"
+              onclick="replaceValueInput('auto_outsideRetro', 504 )"
+              />
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="retroExterieur" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="retroExterieur" @click="deleteElementConfort('retroExterieur')" aria-hidden="true"></i> 
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                 v-show="retroExterieur"
+                 @click="deleteElementConfort('retroExterieur')"
+                 onclick="replaceValueInput('auto_outsideRetro', 0.01 )"
+                 aria-hidden="true"></i>
               <p class=" text-center text-uppercase">retro exterieur<br/>504 €</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 marginSeat text-center">
@@ -721,7 +790,9 @@
               src="/picture/configurateur/equipements/categories/confort/retro-int-electrochrome.jpg"
               alt="third slide"
               style="max-width: 100%;"
-              @click="choiceRetroInterieur"/>
+              @click="choiceRetroInterieur"
+              onclick="replaceValueInput('auto_interiorMirror', 0 )"
+              />
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="retroInterieur" aria-hidden="true"></i>
@@ -737,11 +808,16 @@
                 src="/picture/configurateur/equipements/categories/media et navigation/audio-focal.jpg"
                 alt="third slide"
                 style="max-width: 100%;"
-                @click="choiceAudioFocal"/>
+                @click="choiceAudioFocal"
+                onclick="replaceValueInput('auto_focalSound', 600 )"
+                />
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="audioFocal" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="audioFocal" @click="deleteElementMediaEquipment('audioFocal')" aria-hidden="true"></i>
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                 v-show="audioFocal" @click="deleteElementMediaEquipment('audioFocal')"
+                 onclick="replaceValueInput('auto_focalSound', 0.01 )"
+                 aria-hidden="true"></i>
               <p class=" text-center text-uppercase">Audio focal<br/>600 €</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
@@ -750,11 +826,16 @@
                 src="/picture/configurateur/equipements/categories/media et navigation/audio-premium.jpg"
                 alt="third slide"
                 style="max-width: 100%;"
-                @click="choiceAudioPremium"/>
+                @click="choiceAudioPremium"
+                onclick="replaceValueInput('auto_premiumAudio', 1200 )"
+              />
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="audioPremium" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x"  v-show="audioPremium" @click="deleteElementMediaEquipment('audioPremium')" aria-hidden="true"></i>
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                 v-show="audioPremium" @click="deleteElementMediaEquipment('audioPremium')"
+                 onclick="replaceValueInput('auto_premiumAudio', 0.01 )"
+                 aria-hidden="true"></i>
               <p class=" text-center text-uppercase">Audio premium<br/>1200€</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
@@ -763,7 +844,9 @@
                 src="/picture/configurateur/equipements/categories/media et navigation/audio-standard.jpg"
                 alt="third slide"
                 style="max-width: 100%;"
-                @click="choiceAudioStandard"/>
+                @click="choiceAudioStandard"
+                onclick="replaceValueInput('auto_sound', 0 )"
+                />
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="audioStandard" aria-hidden="true"></i>
@@ -776,15 +859,23 @@
                 src="/picture/configurateur/equipements/categories/media et navigation/alpine-metrics.jpg"
                 alt="third slide"
                 style="max-width: 100%;"
-                @click="choiceAlpineMetrics"/>
+                @click="choiceAlpineMetrics"
+                onclick="replaceValueInput('auto_alpineMetrics', 204 )"
+
+                />
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="alpineMetrics" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementMediaEquipment('alpineMetrics')" v-show="alpineMetrics" aria-hidden="true"></i>
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                 @click="deleteElementMediaEquipment('alpineMetrics')"
+                 v-show="alpineMetrics"
+                 aria-hidden="true"
+                 onclick="replaceValueInput('auto_alpineMetrics', 0.01 )"
+              ></i>
               <p class=" text-center text-uppercase">alpine metrics<br/>204€</p>
             </div>
           </div>
-          <!-- Choix s�curity 3 images-->
+          <!-- Choix security 3 images-->
           <div class="row text-center" v-if="security" >
               <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xd-12">
                 <img
@@ -818,11 +909,16 @@
                   src="/picture/configurateur/equipements/categories/securite/freinage-haute-perf.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click="choiceFreinageHautePerfomance"/>
+                  @click="choiceFreinageHautePerfomance"
+                  onclick="replaceValueInput('auto_highPerformanceBrake', 1000 )"
+                />
               
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="freinageHautePerfomance" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="freinageHautePerfomance" @click="deleteElementSecurity('freinageHautePerfomance')" aria-hidden="true"></i> 
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="freinageHautePerfomance"
+                   onclick="replaceValueInput('auto_highPerformanceBrake', 0.01 )"
+                   @click="deleteElementSecurity('freinageHautePerfomance')" aria-hidden="true"></i>
                 <p class=" text-center text-uppercase">freinage haute perfomance<br/>1000€</p>
               </div>
             </div>
@@ -834,11 +930,17 @@
               src="/picture/configurateur/equipements/categories/personnalisation exterieure/etrier-bleu.jpg"
               alt="third slide"
               style="max-width: 100%;"
-              @click="choiceEtrierBleu"/>
+              @click="choiceEtrierBleu"
+              onclick="replaceValueInput('auto_bleuCalliper', 384 )"
+              />
               
               <!-- validation symbol-->
             <i class=" colorvalid fa fa-check-circle fa-3x" v-show="etrierBleu" aria-hidden="true"></i>
-            <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoExterieur('etrierBleu')" v-show="etrierBleu" aria-hidden="true"></i>
+            <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+               @click="deleteElementPersoExterieur('etrierBleu')"
+               v-show="etrierBleu" aria-hidden="true"
+               onclick="replaceValueInput('auto_bleuCalliper', 0.01 )"
+            ></i>
             <p class=" text-center text-uppercase">etrier bleu<br/>384€</p>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6">
@@ -860,11 +962,17 @@
               src="/picture/configurateur/equipements/categories/personnalisation exterieure/logo-alpine.jpg"
               alt="third slide"
               style="max-width: 100%;"
-              @click="choiceLogoAlpine"/>
+              @click="choiceLogoAlpine"
+              onclick="replaceValueInput('auto_alpineLogo', 120 )"
+              />
               
               <!-- validation symbol-->
             <i class=" colorvalid fa fa-check-circle fa-3x" v-show="logoAlpine" aria-hidden="true"></i>
-            <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoExterieur('logoAlpine')" v-show="logoAlpine" aria-hidden="true"></i>
+            <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+               @click="deleteElementPersoExterieur('logoAlpine')"
+               v-show="logoAlpine"
+               onclick="replaceValueInput('auto_alpineLogo', 0.01 )"
+               aria-hidden="true"></i>
             <p class="text-uppercase text-center">Logo Alpine<br/>120€</p>
             </div>  
         </div>
@@ -876,11 +984,17 @@
             src="/picture/configurateur/equipements/categories/personnalisation interieure/logo-volant.jpg"
             alt="third slide"
             style="max-width: 100%;"
-            @click="choiceLogoVolant"/>
+            @click="choiceLogoVolant"
+            onclick="replaceValueInput('auto_wheelLogo', 84 )"
+            />
               
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="logoVolant" aria-hidden="true"></i>
-          <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoInterieur('logoVolant')" v-show="logoVolant" aria-hidden="true"></i> 
+          <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+             @click="deleteElementPersoInterieur('logoVolant')"
+             v-show="logoVolant"
+             onclick="replaceValueInput('auto_wheelLogo', 0.01 )"
+             aria-hidden="true"></i>
           <p class=" text-center text-uppercase">logo volant<br/>84€</p>
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
@@ -902,11 +1016,16 @@
             src="/picture/configurateur/equipements/categories/personnalisation interieure/pedal-alu.jpg"
             alt="third slide"
             style="max-width: 100%;"
+            onclick="replaceValueInput('auto_aluminumPedal', 120)"
             @click="choicePedalAlu"/>
               
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="pedalAlu" aria-hidden="true"></i>
-          <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoInterieur('pedalAlu')" v-show="pedalAlu" aria-hidden="true"></i>
+          <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+             @click="deleteElementPersoInterieur('pedalAlu')"
+             v-show="pedalAlu"
+             onclick="replaceValueInput('auto_aluminumPedal', 0.01)"
+             aria-hidden="true"></i>
           <p class=" text-center text-uppercase">pedal alu<br/>120€</p>
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 marginSeat text-center">
@@ -915,11 +1034,17 @@
             src="/picture/configurateur/equipements/categories/personnalisation interieure/siege-chauffant.jpg"
             alt="third slide"
             style="max-width: 100%;"
-            @click="choiceSiegeChauffant"/>
+            @click="choiceSiegeChauffant"
+            onclick="replaceValueInput('auto_heatedSeat', 400 )"
+            />
               
             <!-- validation symbol-->
           <i class=" colorvalid fa fa-check-circle fa-3x" v-show="siegeChauffant" aria-hidden="true"></i>
-          <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementPersoInterieur('siegeChauffant')" v-show="siegeChauffant" aria-hidden="true"></i>
+          <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+             @click="deleteElementPersoInterieur('siegeChauffant')"
+             v-show="siegeChauffant"
+             onclick="replaceValueInput('auto_heatedSeat', 0.01 )"
+             aria-hidden="true"></i>
           <p class=" text-center text-uppercase">siège chauffant<br/>400€</p>
         </div>
       </div>
@@ -1107,11 +1232,17 @@
                   src="/picture/configurateur/accessoires/transport et protection/alarme.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click ="AccessoireChoiceAlarm"/>
+                  @click ="AccessoireChoiceAlarm"
+                  onclick="replaceValueInput('auto_alarm', 543 )"
+                />
                 
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="alarm" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="alarm"  @click="deleteElementTransportProtection('alarm')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="alarm"
+                   @click="deleteElementTransportProtection('alarm')"
+                   onclick="replaceValueInput('auto_alarm', 0.01 )"
+                   aria-hidden="true"></i>
                 <p style="text-align: center;">ALARM <br />543 €</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1120,11 +1251,17 @@
                   src="/picture/configurateur/accessoires/transport et protection/chaaine-neige.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click ="AccessoireChoiceChaine"/>
+                  @click ="AccessoireChoiceChaine"
+                  onclick="replaceValueInput('auto_chain', 336 )"
+                />
 
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="chaine" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="chaine"  @click="deleteElementTransportProtection('chaine')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="chaine"
+                   @click="deleteElementTransportProtection('chaine')"
+                   onclick="replaceValueInput('auto_chain', 0.01 )"
+                   aria-hidden="true"></i>
                 <p style="text-align: center;">CHAINE <br />336 €</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1133,11 +1270,17 @@
                   src="/picture/configurateur/accessoires/transport et protection/extincteur.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click ="AccessoireChoiceExtincteur"/>
+                  @click ="AccessoireChoiceExtincteur"
+                  onclick="replaceValueInput('auto_extinguishing', 22)"
+                />
 
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="extincteur" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="extincteur"  @click="deleteElementTransportProtection('extincteur')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="extincteur"
+                   @click="deleteElementTransportProtection('extincteur')"
+                   onclick="replaceValueInput('auto_extinguishing', 0.01)"
+                   aria-hidden="true"></i>
                 <p class="text-align: center;">EXTINCTEUR<br />22 €</p>
               </div>
             </div>
@@ -1149,11 +1292,18 @@
                   src="/picture/configurateur/accessoires/transport et protection/fixation-extincteur.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click ="AccessoireChoiceFixation"/>
+                  @click ="AccessoireChoiceFixation"
+                  onclick="replaceValueInput('auto_fixation', 72)"
+                />
 
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="fixation" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="fixation"  @click="deleteElementTransportProtection('fixation')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="fixation"
+                   @click="deleteElementTransportProtection('fixation')"
+                   aria-hidden="true"
+                   onclick="replaceValueInput('auto_fixation', 0.01)"
+                ></i>
                 <p style="text-align: center;">fIXATION <br />72 €</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1162,11 +1312,17 @@
                   src="/picture/configurateur/accessoires/transport et protection/kit-securite.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click ="AccessoireChoiceKitSecurite"/>
+                  @click ="AccessoireChoiceKitSecurite"
+                  onclick="replaceValueInput('auto_kitSecurity', 20)"
+                />
 
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="kitSecurite" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="kitSecurite"  @click="deleteElementTransportProtection('kitSecurite')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="kitSecurite"
+                   @click="deleteElementTransportProtection('kitSecurite')"
+                   onclick="replaceValueInput('auto_kitSecurity', 0.01)"
+                   aria-hidden="true"></i>
                 <p style="text-align: center;">KIT SECURITE <br />20 €</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1175,11 +1331,18 @@
                   src="/picture/configurateur/accessoires/transport et protection/protection-obd.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click ="AccessoireChoiceObd"/>
+                  @click ="AccessoireChoiceObd"
+                  onclick="replaceValueInput('auto_obd', 99)"
+                />
 
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="obd" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="obd"  @click="deleteElementTransportProtection('obd')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="obd"
+                   @click="deleteElementTransportProtection('obd')"
+                   aria-hidden="true"
+                   onclick="replaceValueInput('auto_obd', 0.01)"
+                ></i>
                 <p class="text-align: center;">OBD<br />99 € </p>
               </div>
             </div>
@@ -1203,11 +1366,17 @@
                   src="/picture/configurateur/accessoires/multimedia/support-camera.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click ="AccessoireChoiceSupportCamera"/>
+                  @click ="AccessoireChoiceSupportCamera"
+                  onclick="replaceValueInput('auto_cameraSupport', 89)"
+                />
 
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="supportCamera" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="supportCamera"  @click="deleteElementMedia('supportCamera')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="supportCamera"
+                   @click="deleteElementMedia('supportCamera')"
+                   onclick="replaceValueInput('auto_cameraSupport', 0.01)"
+                   aria-hidden="true"></i>
                 <p style="text-align: center;">SUPPORT CAMERA<br />89 €</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1216,11 +1385,17 @@
                   src="/picture/configurateur/accessoires/multimedia/support-smartphone.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click ="AccessoireChoiceSupportSmartphone"/>
+                  @click ="AccessoireChoiceSupportSmartphone"
+                  onclick="replaceValueInput('auto_smartphoneSupport', 21)"
+                />
 
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="supportSmartphone" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="supportSmartphone"  @click="deleteElementMedia('supportSmarphone')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="supportSmartphone"
+                   @click="deleteElementMedia('supportSmarphone')"
+                   onclick="replaceValueInput('auto_smartphoneSupport', 0.01)"
+                   aria-hidden="true"></i>
                 <p style="text-align: center;">SUPPORT SMARTPHONE<br />21 €</p>
               </div>
           </div>
@@ -1243,11 +1418,18 @@
                   src="/picture/configurateur/accessoires/interieur/filet-rangement.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click ="AccessoireChoiceFilet"/>
+                  @click ="AccessoireChoiceFilet"
+                  onclick="replaceValueInput('auto_net', 59)"
+                />
 
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="filet" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="filet"  @click="deleteElementInterieur('filet')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="filet"
+                   @click="deleteElementInterieur('filet')"
+                   aria-hidden="true"
+                   onclick="replaceValueInput('auto_net', 0.01)"
+                ></i>
                 <p style="text-align: center;">FILET<br />59 €</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1256,11 +1438,17 @@
                   src="/picture/configurateur/accessoires/interieur/tapis-coffre.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click ="AccessoireChoiceTapis"/>
+                  @click ="AccessoireChoiceTapis"
+                  onclick="replaceValueInput('auto_mat', 83)"
+                />
 
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="tapis" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="tapis"  @click="deleteElementInterieur('tapis')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="tapis"
+                   @click="deleteElementInterieur('tapis')"
+                   aria-hidden="true"
+                   onclick="replaceValueInput('auto_mat', 0.01)"
+                ></i>
                 <p style="text-align: center;">TAPIS<br />83 €</p>
               </div>
           </div>
@@ -1284,11 +1472,16 @@
                   src="/picture/configurateur/accessoires/garage/chargeur-batterie.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click ="AccessoireChoiceChargeurBatterie"/>
+                  @click ="AccessoireChoiceChargeurBatterie"
+                  onclick="replaceValueInput('auto_batteryCharger', 240)"
+                />
 
                   <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="chargeurBatterie" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="chargeurBatterie"  @click="deleteElementMaterielGarage('chargeurBatterie')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="chargeurBatterie"
+                   onclick="replaceValueInput('auto_batteryCharger', 0.01)"
+                   @click="deleteElementMaterielGarage('chargeurBatterie')" aria-hidden="true"></i>
                 <p style="text-align: center;">CHARGEUR BATTERIE<br />240 €</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1297,11 +1490,17 @@
                   src="/picture/configurateur/accessoires/garage/kit-outils.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click ="AccessoireChoiceKitOutils"/>
+                  @click ="AccessoireChoiceKitOutils"
+                  onclick="replaceValueInput('auto_kitTools', 393)"
+                />
 
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="kitOutils" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="kitOutils"  @click="deleteElementMaterielGarage('kitOutils')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="kitOutils"
+                   @click="deleteElementMaterielGarage('kitOutils')"
+                   aria-hidden="true"
+                   onclick="replaceValueInput('auto_kitTools', 0.01)"></i>
                 <p style="text-align: center;">KIT OUTILS<br />393 €</p>
               </div>
           </div>
@@ -1325,11 +1524,17 @@
                   src="/picture/configurateur/accessoires/exterieur/antivol-jantes.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click="AccessoireChoiceAntivol"/>
+                  @click="AccessoireChoiceAntivol"
+                  onclick="replaceValueInput('auto_antiTheft', 57)"
+                />
 
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="antivol" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="antivol"  @click="deleteElementExterieur('antivol')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="antivol"  @click="deleteElementExterieur('antivol')"
+                   aria-hidden="true"
+                   onclick="replaceValueInput('auto_antiTheft', 0.01)"
+                ></i>
                 <p style="text-align: center;">ANTIVOL<br />57 €</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1338,10 +1543,17 @@
                   src="/picture/configurateur/accessoires/exterieur/cabochons-metal.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click="AccessoireChoiceCabochons"/>
+                  @click="AccessoireChoiceCabochons"
+                  onclick="replaceValueInput('auto_cabochons', 24)"
+                />
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="cabochons" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="cabochons"  @click="deleteElementExterieur('cabochons')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="cabochons"
+                   @click="deleteElementExterieur('cabochons')"
+                   aria-hidden="true"
+                   onclick="replaceValueInput('auto_cabochons', 0.01)"
+                ></i>
                 <p style="text-align: center;">CABOCHONS<br />24 €</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1350,10 +1562,16 @@
                   src="/picture/configurateur/accessoires/exterieur/housse.jpg"
                   alt="third slide"
                   style="max-width: 100%;"
-                  @click="AccessoireChoiceHousse"/>
+                  @click="AccessoireChoiceHousse"
+                  onclick="replaceValueInput('auto_cover', 216)"
+                />
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="housse" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="housse"  @click="deleteElementExterieur('housse')" aria-hidden="true"></i>  
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x"
+                   v-show="housse"  @click="deleteElementExterieur('housse')"
+                   aria-hidden="true"
+                   onclick="replaceValueInput('auto_cover', 0.01)"
+                ></i>
                 <p style="text-align: center;">HOUSSE<br />216 €</p>
               </div>
           </div>
@@ -1468,7 +1686,12 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-  
+
+    {{ form_start(form) }}
+    <div>
+      {% include 'auto/new.html.twig' %}
+    </div>
+
     <!-- Bouton avec le prix -->
     <div class=" contenair contenairShop2">
       <div class="row flex-wrapLG">
@@ -1477,19 +1700,16 @@
           <!-- TO DO : message � afficher par d�faut � l'aide du blade de Laravel-->
           ${priceTotalDisplay} €
         </button>
-        <button
+        <button type="submit"
           class="buttonShopAchat rounded col-6 col-sm-6 col-md-6 col-lg-4 col-xd-4">
-          Acheter <i class="fa fa-shopping-cart"></i>
+          Enregistrer <i class="fa fa-shopping-cart"></i>
         </button>
       </div>
     </div>
+
+    {{ form_end(form) }}
   </section>    
 </div>
-
-  <!-- formulaire cacher -->
-  <div class="container formHidden">
-    {% include 'auto/new.html.twig' %}
-  </div>
 
 
 {% endblock %}
@@ -1499,4 +1719,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
 
 <script src="/js/appVuejs.js"></script>
+  <script src="/js/configurator.js"></script>
+
 {% endblock %}
