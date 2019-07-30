@@ -741,7 +741,7 @@
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="audioFocal" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="audioFocal" aria-hidden="true"></i> 
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="audioFocal" @click="deleteElementMediaEquipment('audioFocal')" aria-hidden="true"></i>
               <p class=" text-center text-uppercase">Audio focal<br/>600 €</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
@@ -754,7 +754,7 @@
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="audioPremium" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementMedia('audioPremium')" v-show="audioPremium" aria-hidden="true"></i>
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x"  v-show="audioPremium" @click="deleteElementMediaEquipment('audioPremium')" aria-hidden="true"></i>
               <p class=" text-center text-uppercase">Audio premium<br/>1200€</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6  text-center">
@@ -767,7 +767,7 @@
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="audioStandard" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementMedia('audioStandard')"  v-show="audioStandard" aria-hidden="true"></i> 
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementMediaEquipment('audioStandard')"  v-show="audioStandard" aria-hidden="true"></i>
               <p class=" text-center text-uppercase">Audio standard<br/>0€</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xd-6 marginSeat text-center">
@@ -780,7 +780,7 @@
               
                 <!-- validation symbol-->
               <i class=" colorvalid fa fa-check-circle fa-3x" v-show="alpineMetrics" aria-hidden="true"></i>
-              <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementMedia('alpineMetrics')" v-show="alpineMetrics" aria-hidden="true"></i> 
+              <i class="  colorvalidRed fa fa-minus-circle fa-3x" @click="deleteElementMediaEquipment('alpineMetrics')" v-show="alpineMetrics" aria-hidden="true"></i>
               <p class=" text-center text-uppercase">alpine metrics<br/>204€</p>
             </div>
           </div>
@@ -953,7 +953,14 @@
               {# <p v-if ="!choiceCategory" style="text-align: center;" class="bold text-uppercase">Conduite</p>
                #}
                 <!-- validation symbol-->
-              <i class=" imgOrange fa fa-check-circle " @click="choiceCategoryPictureInstant"></i>
+                <!--orange validation -->
+              <i class=" imgOrange fa fa-check-circle " @click="choiceCategoryPictureInstant" v-if="tableCategoryDisplay=='conduite' && !valideConduite "></i>
+              <i class=" imgOrange fa fa-check-circle " @click="choiceCategoryPictureInstant" v-if="tableCategoryDisplay=='design' && !valideDesign "></i>
+                <!-- vert validation -->
+              <i class=" imgGreenEquipment fa fa-check-circle " @click="choiceCategoryPictureInstant" v-if="tableCategoryDisplay=='conduite' && valideConduite "></i>
+              <i class=" imgGreenEquipment fa fa-check-circle " @click="choiceCategoryPictureInstant" v-if="tableCategoryDisplay=='design' && valideDesign "></i>
+
+
               <p style="text-align: center;" class="bold text-uppercase">${tableCategoryDisplay}</p>
             </div>
             <div
@@ -967,8 +974,9 @@
                 @click="choiceConfort"/>
 
               <!-- validation symbol-->
-              <i class=" imgOrange fa fa-check-circle " @click="choiceConfort"></i>
-              
+              <i class=" imgOrange fa fa-check-circle " @click="choiceConfort" v-if="!valideConfort"></i>
+              <i class=" imgGreenEquipment fa fa-check-circle " @click="choiceConfort" v-if="valideConfort"></i>
+
               <p style="text-align: center;" class="bold">CONFORT</p>
             </div>
             <div
@@ -982,7 +990,8 @@
                 @click="choiceMedia"/>
 
                 <!-- validation symbol-->
-              <i class=" imgOrange fa fa-check-circle " @click="choiceMedia"></i>
+              <i class=" imgOrange fa fa-check-circle " @click="choiceMedia" v-if="!valideMedia"></i>
+              <i class=" imgGreenEquipment fa fa-check-circle " @click="choiceConfort" v-if="valideMedia"></i>
 
               <p style="text-align: center;" class="bold">
                 MEDIA ET NAVIGATION
@@ -1001,7 +1010,9 @@
                 @click="choiceOutside"/>
 
               <!-- validation symbol-->
-              <i class=" imgOrange fa fa-check-circle " @click="choiceOutside"></i>
+              <i class=" imgOrange fa fa-check-circle " @click="choiceOutside" v-if="!validePersoExterieur"></i>
+              <i class=" imgGreenEquipment fa fa-check-circle " @click="choiceConfort" v-if="validePersoExterieur"></i>
+
 
               <p style="text-align: center;" class="bold">PERSO EXTERIEURE</p>
             </div>
@@ -1016,7 +1027,9 @@
                 @click="choiceInside"/>
 
                 <!-- validation symbol-->
-              <i class=" imgOrange fa fa-check-circle " @click="choiceInside"></i>
+              <i class=" imgOrange fa fa-check-circle " @click="choiceInside" v-if="!validePersoInterieur"></i>
+              <i class=" imgGreenEquipment fa fa-check-circle " @click="choiceConfort" v-if="validePersoInterieur"></i>
+
 
 
               <p style="text-align: center;" class="bold">PERSO INTERIEURE</p>
@@ -1032,7 +1045,9 @@
                 @click="choiceSecurity"/>
 
                 <!-- validation symbol-->
-              <i class=" imgOrange fa fa-check-circle " @click="choiceSecurity"></i>
+              <i class=" imgOrange fa fa-check-circle " @click="choiceSecurity" v-if="!valideSecurite"></i>
+              <i class=" imgGreenEquipment fa fa-check-circle " @click="choiceConfort" v-if="valideSecurite"></i>
+
 
               <p style="text-align: center;" class="bold">SECURITE</p>
             </div>
@@ -1192,7 +1207,7 @@
 
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="supportCamera" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="supportCamera"  @click="deleteElementTransportProtection('supportCamera')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="supportCamera"  @click="deleteElementMedia('supportCamera')" aria-hidden="true"></i>
                 <p style="text-align: center;">SUPPORT CAMERA<br />89 €</p>
               </div>
               <div class=" SmallContenairColor">
@@ -1205,7 +1220,7 @@
 
                 <!-- validation symbol-->
                 <i class=" colorvalid fa fa-check-circle fa-3x" v-show="supportSmartphone" aria-hidden="true"></i>
-                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="supportSmartphone"  @click="deleteElementTransportProtection('supportSmartphone')" aria-hidden="true"></i>
+                <i class="  colorvalidRed fa fa-minus-circle fa-3x" v-show="supportSmartphone"  @click="deleteElementMedia('supportSmarphone')" aria-hidden="true"></i>
                 <p style="text-align: center;">SUPPORT SMARTPHONE<br />21 €</p>
               </div>
           </div>
@@ -1470,6 +1485,11 @@
     </div>
   </section>    
 </div>
+
+  <!-- formulaire cacher -->
+  <div class="container formHidden">
+    {% include 'auto/new.html.twig' %}
+  </div>
 
 
 {% endblock %}
